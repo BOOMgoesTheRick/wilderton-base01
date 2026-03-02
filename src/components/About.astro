@@ -1,0 +1,129 @@
+---
+import type { Translations } from '../i18n/types';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const a = t.about;
+---
+
+<section id="about" class="bg-navy py-24 lg:py-36 overflow-hidden">
+  <div class="container mx-auto px-6 lg:px-16 xl:px-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <!-- Left: Text content -->
+      <div class="fade-up">
+        <div class="section-eyebrow mb-6">
+          <div class="w-8 h-px bg-gold" aria-hidden="true"></div>
+          {a.eyebrow}
+        </div>
+
+        <h2
+          class="font-display text-4xl md:text-5xl font-bold text-cream leading-tight mb-8"
+          set:html={a.headline.replace(/\n/g, '<br />')}
+        />
+
+        <div class="w-12 h-0.5 bg-gold mb-8" aria-hidden="true"></div>
+
+        <p class="font-body text-cream/65 text-base md:text-lg leading-relaxed mb-5">
+          {a.body}
+        </p>
+        <p class="font-body text-cream/65 text-base md:text-lg leading-relaxed mb-12">
+          {a.body2}
+        </p>
+
+        <!-- Signature -->
+        <div class="border-t border-cream/10 pt-8">
+          <div class="font-display italic text-gold text-lg mb-1">Wilderton</div>
+          <div class="font-body text-cream/40 text-sm tracking-wide">{a.signature}</div>
+        </div>
+      </div>
+
+      <!-- Right: Abstract visual -->
+      <div class="fade-up relative flex items-center justify-center" style="transition-delay: 0.15s">
+        <!-- Main geometric composition -->
+        <div class="relative w-full max-w-sm mx-auto aspect-square">
+          <!-- Outer ring -->
+          <div
+            class="absolute inset-0 border border-gold/15 rounded-full"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Mid ring -->
+          <div
+            class="absolute inset-8 border border-gold/25 rounded-full"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Inner square (rotated) -->
+          <div
+            class="absolute inset-16 border border-gold/40 rotate-45 transform"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Center dot -->
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gold rounded-full"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Horizontal line through center -->
+          <div
+            class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent -translate-y-1/2"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Vertical line through center -->
+          <div
+            class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent -translate-x-1/2"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Corner accents -->
+          <div
+            class="absolute top-6 left-6 w-6 h-6 border-l border-t border-gold/50"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="absolute top-6 right-6 w-6 h-6 border-r border-t border-gold/50"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="absolute bottom-6 left-6 w-6 h-6 border-l border-b border-gold/50"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="absolute bottom-6 right-6 w-6 h-6 border-r border-b border-gold/50"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Stat callouts -->
+          <div
+            class="absolute -top-4 -right-4 bg-navy-dark border border-gold/30 px-4 py-3 text-center"
+          >
+            <div class="font-display text-2xl font-bold text-gold">50+</div>
+            <div class="font-body text-[10px] text-cream/40 uppercase tracking-widest mt-0.5">
+              Projects
+            </div>
+          </div>
+
+          <div
+            class="absolute -bottom-4 -left-4 bg-navy-dark border border-gold/30 px-4 py-3 text-center"
+          >
+            <div class="font-display text-2xl font-bold text-gold">10</div>
+            <div class="font-body text-[10px] text-cream/40 uppercase tracking-widest mt-0.5">
+              Domains
+            </div>
+          </div>
+        </div>
+
+        <!-- Background glow -->
+        <div
+          class="absolute inset-0 bg-gold/3 blur-3xl rounded-full pointer-events-none"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>

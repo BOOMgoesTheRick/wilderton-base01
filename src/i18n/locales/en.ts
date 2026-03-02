@@ -1,0 +1,171 @@
+import type { Translations } from '../types';
+
+export const en: Translations = {
+  meta: {
+    title: 'Wilderton Advisory — Strategic IT Consulting',
+    description:
+      'Strategic IT advisory for digital transformation, cybersecurity, Microsoft 365 architecture, and governance. 50+ projects delivered across industries.',
+  },
+  nav: {
+    services: 'Services',
+    about: 'About',
+    contact: 'Contact',
+    book: 'Book a Call',
+  },
+  hero: {
+    eyebrow: 'Strategic IT Advisory',
+    headline: 'Technology Leadership for Organizations That Demand Excellence',
+    subheadline:
+      'From digital transformation to cybersecurity architecture — I help executives align IT with strategy, reduce risk, and build systems built to last.',
+    cta_primary: 'Explore Services',
+    cta_secondary: 'Schedule a Consultation',
+    stat1_value: '50+',
+    stat1_label: 'Transformations Delivered',
+    stat2_value: '10',
+    stat2_label: 'Areas of Expertise',
+    stat3_value: '100%',
+    stat3_label: 'Executive-Focused',
+  },
+  services: {
+    eyebrow: 'Advisory Services',
+    headline: 'Ten Competencies. One Strategic Partner.',
+    subheadline:
+      "Every engagement is tailored to your organization's maturity, risk profile, and executive priorities.",
+    items: [
+      {
+        number: '01',
+        title: 'IT Strategy & Digital Transformation',
+        description:
+          'Modernize technology, governance, and workflows through structured digital transformation. Combining IT architecture, cybersecurity, compliance, and operational efficiency — aligned with your executive vision. 50+ transformation projects delivered.',
+        tags: ['Digital Roadmap', 'IT Architecture', 'Board Governance'],
+      },
+      {
+        number: '02',
+        title: 'Microsoft 365 Architecture & Migration',
+        description:
+          'Design, migration, and optimization of M365 environments including Exchange Online, SharePoint, Teams, OneDrive, Entra ID, Intune, and Defender. Structured, secure, and cost-optimized for professional organizations.',
+        tags: ['Exchange Online', 'SharePoint', 'Entra ID'],
+      },
+      {
+        number: '03',
+        title: 'Cybersecurity & Zero-Trust Implementation',
+        description:
+          'Layered cybersecurity architectures using a Zero-Trust approach. Identity protection, endpoint security, network filtering, monitoring, and compliance. Security is built as a system — not assembled from products.',
+        tags: ['Zero Trust', 'Conditional Access', 'EDR'],
+      },
+      {
+        number: '04',
+        title: 'Endpoint Management & Modern Deployment',
+        description:
+          'Transition from traditional imaging to cloud-based device management via Intune and Windows Autopilot. Centralized policy, compliance enforcement, application packaging, and secure onboarding for hybrid workforces.',
+        tags: ['Intune', 'Autopilot', 'MDM'],
+      },
+      {
+        number: '05',
+        title: 'Infrastructure & Network Architecture',
+        description:
+          'Design and management of hybrid infrastructures: Windows Server, Hyper-V, Meraki, FortiGate, VPN architectures, and secure remote access. Focused on resilience, cost control, and long-term sustainability.',
+        tags: ['Hyper-V', 'FortiGate', 'VPN'],
+      },
+      {
+        number: '06',
+        title: 'IT Governance & Compliance',
+        description:
+          'Advisory for IT governance, Loi 25 compliance, privacy regulations, and board-level risk oversight. I bridge the gap between technical systems and executive accountability — from maturity assessments to DLP strategy.',
+        tags: ['Loi 25', 'Risk Management', 'DLP'],
+      },
+      {
+        number: '07',
+        title: 'Web Development & Architecture',
+        description:
+          'Custom website development using modern frameworks (Astro, Tailwind, GitHub, Vercel). Designed for scalability, multi-tenant reuse, dynamic theming, and professional branding — secure, performant, and technically structured.',
+        tags: ['Astro', 'Tailwind', 'Vercel'],
+      },
+      {
+        number: '08',
+        title: 'Process Automation & Scripting',
+        description:
+          'Automation of repetitive IT tasks using PowerShell, Microsoft Graph API, Intune scripts, and RMM integrations. Automation increases security consistency, reduces operational risk, and frees your team for strategic work.',
+        tags: ['PowerShell', 'Graph API', 'RMM'],
+      },
+      {
+        number: '09',
+        title: 'Email & Collaboration Architecture',
+        description:
+          'Design of secure, structured email and collaboration environments. Special focus on shared mailboxes, delegate management, email authentication (SPF/DKIM/DMARC), banner filtering, and Power Automate compatibility.',
+        tags: ['SPF/DKIM/DMARC', 'Shared Mailboxes', 'Power Automate'],
+      },
+      {
+        number: '10',
+        title: 'Backup & Business Continuity',
+        description:
+          'Strategic backup design beyond "just backups." Focus on business continuity, ransomware resilience, and recovery speed — Microsoft 365 backup, Veeam implementations, and tested disaster recovery planning.',
+        tags: ['Veeam', 'M365 Backup', 'Disaster Recovery'],
+      },
+    ],
+  },
+  about: {
+    eyebrow: 'About Wilderton',
+    headline: 'Senior IT Advisor.\nExecutive Partner.\nTrusted Architect.',
+    body: 'Wilderton Advisory was built on a simple conviction: organizations deserve an IT advisor who speaks both technical and executive language fluently. With over 50 transformation projects delivered across industries, I bring enterprise-grade rigor with boutique agility.',
+    body2:
+      'Every engagement starts with listening — to your strategy, your constraints, and your risk tolerance. The result is always a solution designed for your organization, not adapted from a template.',
+    signature: 'Principal Advisor, Wilderton Advisory',
+  },
+  whyus: {
+    eyebrow: 'Why Wilderton',
+    headline: 'What Sets This Practice Apart',
+    items: [
+      {
+        title: 'Executive Fluency',
+        description:
+          'I communicate with boards, CFOs, and operations leads — not just IT staff. Every recommendation is anchored in business context, financial reality, and strategic direction.',
+      },
+      {
+        title: 'Architecture First',
+        description:
+          'No band-aids. Every solution is designed as a system — secure, scalable, and sustainable from day one. I build for the organization you are becoming, not just the one you are today.',
+      },
+      {
+        title: 'Boutique Accountability',
+        description:
+          'You work directly with the senior advisor throughout the engagement — not a rotating team of juniors. Continuity, ownership, and accountability are non-negotiable.',
+      },
+      {
+        title: 'Compliance Ready',
+        description:
+          'Deep expertise in Loi 25, cybersecurity frameworks, and risk management means your organization is always audit-ready — and your leadership team is always informed.',
+      },
+    ],
+  },
+  contact: {
+    eyebrow: 'Get in Touch',
+    headline: 'Start the Conversation',
+    subheadline:
+      'Whether you are planning a transformation, navigating a compliance challenge, or simply need a seasoned second opinion — I am here.',
+    form: {
+      name: 'Full Name',
+      name_placeholder: 'Jean Dupont',
+      org: 'Organization',
+      org_placeholder: 'Your Company',
+      email: 'Email Address',
+      email_placeholder: 'jean@yourcompany.com',
+      subject: 'Subject',
+      subject_placeholder: 'How can I help you?',
+      message: 'Message',
+      message_placeholder: 'Tell me about your project or challenge...',
+      submit: 'Send Message',
+      disclaimer: 'Your information is confidential and will never be shared.',
+    },
+  },
+  footer: {
+    tagline: 'Strategic IT Advisory',
+    rights: '© 2026 Wilderton Advisory. All rights reserved.',
+    privacy: 'Privacy Policy',
+    links: {
+      services: 'Services',
+      about: 'About',
+      contact: 'Contact',
+    },
+  },
+};

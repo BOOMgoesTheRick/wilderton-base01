@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #C6A75E;
+    color: #0F1E2E;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #C6A75E;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 text-gold text-xs font-semibold tracking-widest uppercase font-body;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 bg-gold text-navy font-semibold px-8 py-4 text-sm tracking-wide font-body
+           transition-all duration-300 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20
+           active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2.5 border border-gold/50 text-gold font-semibold px-8 py-4 text-sm tracking-wide font-body
+           transition-all duration-300 hover:border-gold hover:bg-gold/10
+           active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-gold;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .input-field {
+    @apply w-full bg-navy-light/60 border border-cream/10 text-cream placeholder:text-cream/30
+           px-4 py-3 text-sm font-body focus:outline-none focus:border-gold/60 transition-colors duration-200;
+  }
+}
+
+/* Hero entrance animations */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

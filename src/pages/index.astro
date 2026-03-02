@@ -1,0 +1,19 @@
+---
+// Root redirect — detects browser language and redirects to /en/ or /fr/
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/en/" />
+    <title>Wilderton Advisory</title>
+  </head>
+  <body>
+    <script>
+      // Prefer browser language for redirect
+      const lang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+      window.location.replace('/' + lang + '/');
+    </script>
+  </body>
+</html>

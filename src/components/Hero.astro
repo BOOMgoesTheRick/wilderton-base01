@@ -1,0 +1,175 @@
+---
+import type { Translations } from '../i18n/types';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  t: Translations;
+  locale: Locale;
+}
+
+const { t, locale } = Astro.props;
+const h = t.hero;
+---
+
+<section class="relative min-h-screen bg-navy flex flex-col justify-center overflow-hidden">
+  <!-- Dot grid pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background-image: radial-gradient(rgba(198,167,94,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Radial glow accents -->
+  <div
+    class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-navy-light/80 blur-3xl pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Top gold rule -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Decorative vertical line (right side) -->
+  <div
+    class="absolute right-16 top-32 bottom-32 w-px bg-gradient-to-b from-transparent via-gold/20 to-transparent hidden xl:block"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 container mx-auto px-6 lg:px-16 xl:px-24 pt-32 pb-20">
+    <div class="max-w-4xl">
+      <!-- Eyebrow -->
+      <div
+        class="hero-animate flex items-center gap-4 mb-10"
+        style="animation-delay: 0.1s; animation-fill-mode: forwards;"
+      >
+        <div class="w-10 h-px bg-gold" aria-hidden="true"></div>
+        <span class="section-eyebrow">{h.eyebrow}</span>
+      </div>
+
+      <!-- Headline -->
+      <h1
+        class="hero-animate font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-cream leading-[1.08] mb-8"
+        style="animation-delay: 0.25s; animation-fill-mode: forwards;"
+      >
+        {h.headline}
+      </h1>
+
+      <!-- Gold divider -->
+      <div
+        class="hero-animate w-16 h-0.5 bg-gold mb-8"
+        style="animation-delay: 0.38s; animation-fill-mode: forwards;"
+        aria-hidden="true"
+      >
+      </div>
+
+      <!-- Subheadline -->
+      <p
+        class="hero-animate font-body text-lg md:text-xl text-cream/65 max-w-2xl leading-relaxed mb-14"
+        style="animation-delay: 0.45s; animation-fill-mode: forwards;"
+      >
+        {h.subheadline}
+      </p>
+
+      <!-- CTAs -->
+      <div
+        class="hero-animate flex flex-col sm:flex-row gap-4 mb-24"
+        style="animation-delay: 0.58s; animation-fill-mode: forwards;"
+      >
+        <a href={`/${locale}/#services`} class="btn-primary">
+          {h.cta_primary}
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </a>
+        <a href={`/${locale}/#contact`} class="btn-outline">
+          {h.cta_secondary}
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div
+        class="hero-animate"
+        style="animation-delay: 0.72s; animation-fill-mode: forwards;"
+      >
+        <div
+          class="h-px bg-gradient-to-r from-gold/40 via-gold/15 to-transparent mb-8"
+          aria-hidden="true"
+        >
+        </div>
+        <div class="grid grid-cols-3 gap-6 sm:gap-12 max-w-lg">
+          <div>
+            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
+              {h.stat1_value}
+            </div>
+            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
+              {h.stat1_label}
+            </div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
+              {h.stat2_value}
+            </div>
+            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
+              {h.stat2_label}
+            </div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
+              {h.stat3_value}
+            </div>
+            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
+              {h.stat3_label}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="hero-animate absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+    style="animation-delay: 1s; animation-fill-mode: forwards;"
+    aria-hidden="true"
+  >
+    <div class="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent animate-scroll-line">
+    </div>
+  </div>
+</section>

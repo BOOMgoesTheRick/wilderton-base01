@@ -1,0 +1,121 @@
+---
+import type { Translations } from '../i18n/types';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  t: Translations;
+  locale: Locale;
+}
+
+const { t, locale } = Astro.props;
+const f = t.footer;
+---
+
+<footer class="bg-navy-dark border-t border-gold/15">
+  <!-- Gold accent top line -->
+  <div class="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" aria-hidden="true"></div>
+
+  <div class="container mx-auto px-6 lg:px-16 xl:px-24 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <!-- Brand column -->
+      <div class="md:col-span-1">
+        <a href={`/${locale}/`} class="inline-flex items-center gap-3 group mb-4">
+          <div
+            class="w-9 h-9 flex items-center justify-center border border-gold/50 group-hover:border-gold transition-colors"
+          >
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 20 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 1L5.5 15L10 6L14.5 15L19 1"
+                stroke="#C6A75E"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display font-semibold text-sm tracking-wider text-cream/90">
+              WILDERTON
+            </div>
+            <div class="font-body text-gold/70 text-[10px] tracking-[0.2em] uppercase">
+              {locale === 'fr' ? 'Conseil' : 'Advisory'}
+            </div>
+          </div>
+        </a>
+        <p class="font-body text-cream/35 text-sm leading-relaxed max-w-xs">
+          {f.tagline}
+        </p>
+      </div>
+
+      <!-- Navigation column -->
+      <div>
+        <div class="font-body text-cream/30 text-xs tracking-widest uppercase mb-5">
+          Navigation
+        </div>
+        <nav class="flex flex-col gap-3" aria-label="Footer navigation">
+          <a
+            href={`/${locale}/#services`}
+            class="font-body text-cream/55 hover:text-gold text-sm transition-colors duration-200"
+          >
+            {f.links.services}
+          </a>
+          <a
+            href={`/${locale}/#about`}
+            class="font-body text-cream/55 hover:text-gold text-sm transition-colors duration-200"
+          >
+            {f.links.about}
+          </a>
+          <a
+            href={`/${locale}/#contact`}
+            class="font-body text-cream/55 hover:text-gold text-sm transition-colors duration-200"
+          >
+            {f.links.contact}
+          </a>
+        </nav>
+      </div>
+
+      <!-- Languages column -->
+      <div>
+        <div class="font-body text-cream/30 text-xs tracking-widest uppercase mb-5">
+          Language / Langue
+        </div>
+        <div class="flex flex-col gap-3">
+          <a
+            href="/en/"
+            class={`font-body text-sm transition-colors duration-200 ${locale === 'en' ? 'text-gold' : 'text-cream/55 hover:text-gold'}`}
+          >
+            English
+            {locale === 'en' && <span class="text-gold/50 text-xs ml-2">— active</span>}
+          </a>
+          <a
+            href="/fr/"
+            class={`font-body text-sm transition-colors duration-200 ${locale === 'fr' ? 'text-gold' : 'text-cream/55 hover:text-gold'}`}
+          >
+            Français
+            {locale === 'fr' && <span class="text-gold/50 text-xs ml-2">— actif</span>}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-cream/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-cream/25 text-xs">
+        {f.rights}
+      </p>
+      <a
+        href={`/${locale}/privacy`}
+        class="font-body text-cream/25 hover:text-cream/50 text-xs transition-colors duration-200"
+      >
+        {f.privacy}
+      </a>
+    </div>
+  </div>
+</footer>
