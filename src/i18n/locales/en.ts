@@ -186,7 +186,7 @@ export const en: Translations = {
       message_placeholder: 'Tell me about your project or challenge...',
       submit: 'Send Message',
       disclaimer: 'Your information is confidential and will never be shared.',
-      sent: 'Message sent successfully. I will be in touch shortly.',
+      sent: 'Message sent successfully. We will be in touch shortly.',
       error: 'Something went wrong. Please try again or email directly at info@wilderton.ca',
     },
   },
