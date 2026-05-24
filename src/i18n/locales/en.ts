@@ -187,7 +187,7 @@ export const en: Translations = {
       submit: 'Send Message',
       disclaimer: 'Your information is confidential and will never be shared.',
       sent: 'Message sent successfully. We will be in touch shortly.',
-      error: 'Something went wrong. Please try again or email directly at info@wilderton.ca',
+      error: 'Something went wrong. Please try again or email directly at info@wilderton-advisory.com',
     },
   },
   footer: {

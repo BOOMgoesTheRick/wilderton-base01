@@ -187,7 +187,7 @@ export const fr: Translations = {
       submit: 'Envoyer le message',
       disclaimer: 'Vos informations sont confidentielles et ne seront jamais partagées.',
       sent: 'Message envoyé avec succès. Je vous contacterai sous peu.',
-      error: 'Une erreur s\'est produite. Veuillez réessayer ou nous écrire à info@wilderton.ca',
+      error: 'Une erreur s\'est produite. Veuillez réessayer ou nous écrire à info@wilderton-advisory.com',
     },
   },
   footer: {
