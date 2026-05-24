@@ -22,7 +22,7 @@ export const en: Translations = {
     eyebrow: 'Strategic IT Advisory',
     headline: 'Technology Leadership for Organizations That Demand Excellence',
     subheadline:
-      'From digital transformation to cybersecurity architecture — I help executives align IT with strategy, reduce risk, and build systems built to last.',
+      'From digital transformation to cybersecurity architecture — we help executives align IT with strategy, reduce risk, and build systems built to last.',
     cta_primary: 'Explore Services',
     cta_secondary: 'Schedule a Consultation',
     stat1_value: '50+',
@@ -77,7 +77,7 @@ export const en: Translations = {
         number: '06',
         title: 'IT Governance & Compliance',
         description:
-          'Advisory for IT governance, Loi 25 compliance, privacy regulations, and board-level risk oversight. I bridge the gap between technical systems and executive accountability — from maturity assessments to DLP strategy.',
+          'Advisory for IT governance, Loi 25 compliance, privacy regulations, and board-level risk oversight. We bridge the gap between technical systems and executive accountability — from maturity assessments to DLP strategy.',
         tags: ['Loi 25', 'Risk Management', 'DLP'],
       },
       {
@@ -113,10 +113,10 @@ export const en: Translations = {
   about: {
     eyebrow: 'About Wilderton',
     headline: 'Senior IT Advisor.\nExecutive Partner.\nTrusted Architect.',
-    body: 'Wilderton Advisory was built on a simple conviction: organizations deserve an IT advisor who speaks both technical and executive language fluently. With over 50 transformation projects delivered across industries, I bring enterprise-grade rigor with boutique agility.',
+    body: 'Wilderton Advisory was built on a simple conviction: organizations deserve an IT advisory practice that speaks both technical and executive language fluently. With over 50 transformation projects delivered across industries, we bring enterprise-grade rigor with boutique agility.',
     body2:
       'Every engagement starts with listening — to your strategy, your constraints, and your risk tolerance. The result is always a solution designed for your organization, not adapted from a template.',
-    signature: 'Principal Advisor, Wilderton Advisory',
+    signature: 'Wilderton Advisory',
   },
   whyus: {
     eyebrow: 'Why Wilderton',
@@ -126,12 +126,12 @@ export const en: Translations = {
       {
         title: 'Executive Fluency',
         description:
-          'I communicate with boards, CFOs, and operations leads — not just IT staff. Every recommendation is anchored in business context, financial reality, and strategic direction.',
+          'We communicate with boards, CFOs, and operations leads — not just IT staff. Every recommendation is anchored in business context, financial reality, and strategic direction.',
       },
       {
         title: 'Architecture First',
         description:
-          'No band-aids. Every solution is designed as a system — secure, scalable, and sustainable from day one. I build for the organization you are becoming, not just the one you are today.',
+          'No band-aids. Every solution is designed as a system — secure, scalable, and sustainable from day one. We build for the organization you are becoming, not just the one you are today.',
       },
       {
         title: 'Boutique Accountability',
@@ -172,7 +172,7 @@ export const en: Translations = {
     eyebrow: 'Get in Touch',
     headline: 'Start the Conversation',
     subheadline:
-      'Whether you are planning a transformation, navigating a compliance challenge, or simply need a seasoned second opinion — I am here.',
+      'Whether you are planning a transformation, navigating a compliance challenge, or simply need a seasoned second opinion — we are here.',
     form: {
       name: 'Full Name',
       name_placeholder: 'Jean Dupont',
@@ -186,6 +186,8 @@ export const en: Translations = {
       message_placeholder: 'Tell me about your project or challenge...',
       submit: 'Send Message',
       disclaimer: 'Your information is confidential and will never be shared.',
+      sent: 'Message sent successfully. I will be in touch shortly.',
+      error: 'Something went wrong. Please try again or email directly at info@wilderton.ca',
     },
   },
   footer: {

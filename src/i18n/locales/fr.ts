@@ -22,7 +22,7 @@ export const fr: Translations = {
     eyebrow: 'Conseil Stratégique en TI',
     headline: 'Leadership technologique pour les organisations qui exigent l\'excellence',
     subheadline:
-      'De la transformation numérique à l\'architecture de cybersécurité — j\'aide les dirigeants à aligner les TI avec la stratégie, réduire les risques et bâtir des systèmes durables.',
+      'De la transformation numérique à l\'architecture de cybersécurité — nous aidons les dirigeants à aligner les TI avec la stratégie, réduire les risques et bâtir des systèmes durables.',
     cta_primary: 'Explorer les services',
     cta_secondary: 'Planifier une consultation',
     stat1_value: '50+',
@@ -77,7 +77,7 @@ export const fr: Translations = {
         number: '06',
         title: 'Gouvernance TI & Conformité',
         description:
-          'Services-conseils en gouvernance TI, conformité à la Loi 25, réglementations sur la vie privée et surveillance des risques au conseil d\'administration. Je fais le pont entre les systèmes techniques et la responsabilité des dirigeants.',
+          'Services-conseils en gouvernance TI, conformité à la Loi 25, réglementations sur la vie privée et surveillance des risques au conseil d\'administration. Nous faisons le pont entre les systèmes techniques et la responsabilité des dirigeants.',
         tags: ['Loi 25', 'Gestion des risques', 'DLP'],
       },
       {
@@ -113,10 +113,10 @@ export const fr: Translations = {
   about: {
     eyebrow: 'À propos de Wilderton',
     headline: 'Conseiller TI senior.\nPartenaire de direction.\nArchitecte de confiance.',
-    body: 'Wilderton Conseil est né d\'une conviction simple : les organisations méritent un conseiller TI qui maîtrise autant le langage technique que celui des dirigeants. Avec plus de 50 projets de transformation livrés dans divers secteurs, j\'apporte la rigueur de l\'entreprise avec l\'agilité du conseil boutique.',
+    body: 'Wilderton Conseil est né d\'une conviction simple : les organisations méritent une pratique-conseil qui maîtrise autant le langage technique que celui des dirigeants. Avec plus de 50 projets de transformation livrés dans divers secteurs, nous apportons la rigueur de l\'entreprise avec l\'agilité du conseil boutique.',
     body2:
       'Chaque mandat commence par l\'écoute — votre stratégie, vos contraintes et votre tolérance au risque. Le résultat est toujours une solution conçue pour votre organisation, non adaptée d\'un gabarit.',
-    signature: 'Conseiller principal, Wilderton Conseil',
+    signature: 'Wilderton Conseil',
   },
   whyus: {
     eyebrow: 'Pourquoi Wilderton',
@@ -126,12 +126,12 @@ export const fr: Translations = {
       {
         title: 'Fluidité exécutive',
         description:
-          'Je communique avec les conseils d\'administration, les directeurs financiers et les équipes opérationnelles — pas seulement le personnel TI. Chaque recommandation est ancrée dans le contexte d\'affaires et les réalités financières.',
+          'Nous communiquons avec les conseils d\'administration, les directeurs financiers et les équipes opérationnelles — pas seulement le personnel TI. Chaque recommandation est ancrée dans le contexte d\'affaires et les réalités financières.',
       },
       {
         title: 'L\'architecture d\'abord',
         description:
-          'Pas de solutions de fortune. Chaque solution est conçue comme un système — sécurisé, évolutif et durable dès le premier jour. Je construis pour l\'organisation que vous devenez, pas seulement celle d\'aujourd\'hui.',
+          'Pas de solutions de fortune. Chaque solution est conçue comme un système — sécurisé, évolutif et durable dès le premier jour. Nous construisons pour l\'organisation que vous devenez, pas seulement celle d\'aujourd\'hui.',
       },
       {
         title: 'Responsabilité boutique',
@@ -172,7 +172,7 @@ export const fr: Translations = {
     eyebrow: 'Contactez-nous',
     headline: 'Commençons la conversation',
     subheadline:
-      'Que vous planifiiez une transformation, naviguiez un défi de conformité, ou ayez besoin d\'un deuxième avis éclairé — je suis là.',
+      'Que vous planifiiez une transformation, naviguiez un défi de conformité, ou ayez besoin d\'un deuxième avis éclairé — nous sommes là.',
     form: {
       name: 'Nom complet',
       name_placeholder: 'Jean Dupont',
@@ -186,6 +186,8 @@ export const fr: Translations = {
       message_placeholder: 'Parlez-moi de votre projet ou défi...',
       submit: 'Envoyer le message',
       disclaimer: 'Vos informations sont confidentielles et ne seront jamais partagées.',
+      sent: 'Message envoyé avec succès. Je vous contacterai sous peu.',
+      error: 'Une erreur s\'est produite. Veuillez réessayer ou nous écrire à info@wilderton.ca',
     },
   },
   footer: {

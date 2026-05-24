@@ -73,17 +73,17 @@ const f = c.form;
         </div>
         <div id="contact-sent" style="display:none;grid-column:span 2;border:1px solid var(--fg);padding:14px;align-items:center;gap:10px;font-size:13px">
           <span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%"></span>
-          Message sent successfully. I will be in touch shortly.
+          {f.sent}
         </div>
         <div id="contact-error" style="display:none;grid-column:span 2;border:1px solid #c0392b;padding:14px;font-size:13px;color:#c0392b">
-          Something went wrong. Please try again or email directly at info@wilderton.ca
+          {f.error}
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<script>
+<script define:vars={{ submitLabel: f.submit }}>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const btn  = document.getElementById('contact-submit') as HTMLButtonElement | null;
   const sent = document.getElementById('contact-sent') as HTMLElement | null;
@@ -117,7 +117,7 @@ const f = c.form;
       if (err) err.style.display = 'block';
     } finally {
       btn.disabled = false;
-      btn.innerHTML = 'Send Message <span class="arr">→</span>';
+      btn.innerHTML = `${submitLabel} <span class="arr">→</span>`;
     }
   });
 </script>

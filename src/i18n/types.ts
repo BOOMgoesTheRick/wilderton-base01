@@ -89,6 +89,8 @@ export interface Translations {
       message_placeholder: string;
       submit: string;
       disclaimer: string;
+      sent: string;
+      error: string;
     };
   };
   footer: {
