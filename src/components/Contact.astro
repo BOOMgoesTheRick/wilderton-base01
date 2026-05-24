@@ -1,8 +1,10 @@
 ---
 import type { Translations } from '../i18n/types';
+import type { Locale } from '../i18n/utils';
 
 interface Props {
   t: Translations;
+  locale?: Locale;
 }
 
 const { t } = Astro.props;
@@ -10,255 +12,75 @@ const c = t.contact;
 const f = c.form;
 ---
 
-<section id="contact" class="bg-navy py-24 lg:py-36 overflow-hidden relative">
-  <!-- Background dot pattern -->
-  <div
-    class="absolute inset-0 pointer-events-none opacity-40"
-    style="background-image: radial-gradient(rgba(198,167,94,0.07) 1.5px, transparent 1.5px); background-size: 30px 30px;"
-    aria-hidden="true"
-  >
-  </div>
+<section class="sec" id="contact" style="border-bottom:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">{c.eyebrow}</div>
+      <div>
+        <h2 class="sec-title">{c.headline}</h2>
+        <p class="sec-sub">{c.subheadline}</p>
+      </div>
+    </div>
 
-  <div class="relative z-10 container mx-auto px-6 lg:px-16 xl:px-24">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-      <!-- Left: Intro -->
-      <div class="fade-up">
-        <div class="section-eyebrow mb-6">
-          <div class="w-8 h-px bg-gold" aria-hidden="true"></div>
-          {c.eyebrow}
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="lab">Email</div>
+          <div class="val"><a href="mailto:info@wilderton.ca">info@wilderton.ca</a></div>
         </div>
-
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-cream leading-tight mb-6">
-          {c.headline}
-        </h2>
-
-        <div class="w-12 h-0.5 bg-gold mb-8" aria-hidden="true"></div>
-
-        <p class="font-body text-cream/60 text-lg leading-relaxed mb-12">
-          {c.subheadline}
-        </p>
-
-        <!-- Contact info blocks -->
-        <div class="space-y-6">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 border border-gold/30 flex items-center justify-center flex-shrink-0 mt-0.5"
-            >
-              <svg
-                class="w-4 h-4 text-gold/70"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <div>
-              <div class="font-body text-cream/40 text-xs tracking-widest uppercase mb-1">
-                Email
-              </div>
-              <a
-                href="mailto:info@wilderton.ca"
-                class="font-body text-cream/80 hover:text-gold transition-colors"
-              >
-                info@wilderton.ca
-              </a>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 border border-gold/30 flex items-center justify-center flex-shrink-0 mt-0.5"
-            >
-              <svg
-                class="w-4 h-4 text-gold/70"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <div>
-              <div class="font-body text-cream/40 text-xs tracking-widest uppercase mb-1">
-                Location
-              </div>
-              <div class="font-body text-cream/80">Québec, Canada</div>
-            </div>
+        <div class="contact-item">
+          <div class="lab">Location</div>
+          <div class="val">Québec, Canada</div>
+        </div>
+        <div class="contact-item">
+          <div class="lab">Response Window</div>
+          <div class="val">Within 24 hours</div>
+        </div>
+        <div class="contact-item">
+          <div class="lab">Confidentiality</div>
+          <div class="val" style="font-size:13px;color:var(--body-text-2);letter-spacing:0">
+            {f.disclaimer}
           </div>
         </div>
       </div>
 
-      <!-- Right: Form -->
-      <div class="fade-up" style="transition-delay: 0.15s">
-        <form
-          id="contact-form"
-          class="space-y-5"
-          novalidate
+      <form
+        class="reveal"
+        id="contact-form"
+        onsubmit="event.preventDefault();document.getElementById('sent').style.display='flex';this.reset();"
+      >
+        <div class="field">
+          <label for="f-name">{f.name}</label>
+          <input id="f-name" type="text" required />
+        </div>
+        <div class="field">
+          <label for="f-org">{f.org}</label>
+          <input id="f-org" type="text" />
+        </div>
+        <div class="field">
+          <label for="f-email">{f.email}</label>
+          <input id="f-email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="f-subject">{f.subject}</label>
+          <input id="f-subject" type="text" />
+        </div>
+        <div class="field row-wide">
+          <label for="f-msg">{f.message}</label>
+          <textarea id="f-msg" required></textarea>
+        </div>
+        <div class="send-row">
+          <span class="note">Encrypted in transit · Stored 30 days max.</span>
+          <button class="btn" type="submit">{f.submit} <span class="arr">→</span></button>
+        </div>
+        <div
+          id="sent"
+          style="display:none;grid-column:span 2;border:1px solid var(--fg);padding:14px;align-items:center;gap:10px;font-size:13px"
         >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <!-- Name -->
-            <div>
-              <label for="name" class="block font-body text-cream/50 text-xs tracking-widest uppercase mb-2">
-                {f.name}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder={f.name_placeholder}
-                required
-                class="input-field"
-              />
-            </div>
-
-            <!-- Organization -->
-            <div>
-              <label for="org" class="block font-body text-cream/50 text-xs tracking-widest uppercase mb-2">
-                {f.org}
-              </label>
-              <input
-                type="text"
-                id="org"
-                name="organization"
-                placeholder={f.org_placeholder}
-                class="input-field"
-              />
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label for="email" class="block font-body text-cream/50 text-xs tracking-widest uppercase mb-2">
-              {f.email}
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder={f.email_placeholder}
-              required
-              class="input-field"
-            />
-          </div>
-
-          <!-- Subject -->
-          <div>
-            <label for="subject" class="block font-body text-cream/50 text-xs tracking-widest uppercase mb-2">
-              {f.subject}
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder={f.subject_placeholder}
-              class="input-field"
-            />
-          </div>
-
-          <!-- Message -->
-          <div>
-            <label for="message" class="block font-body text-cream/50 text-xs tracking-widest uppercase mb-2">
-              {f.message}
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder={f.message_placeholder}
-              required
-              class="input-field resize-none"
-            ></textarea>
-          </div>
-
-          <!-- Submit -->
-          <div class="flex flex-col gap-4 pt-2">
-            <button type="submit" class="btn-primary justify-center sm:justify-start sm:w-auto w-full">
-              {f.submit}
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
-            <p class="font-body text-cream/30 text-xs">
-              {f.disclaimer}
-            </p>
-          </div>
-
-          <!-- Success message (hidden by default) -->
-          <div id="form-success" class="hidden border border-gold/40 bg-gold/10 px-5 py-4">
-            <p class="font-body text-gold text-sm">
-              ✓ Message sent successfully. I will be in touch shortly.
-            </p>
-          </div>
-        </form>
-      </div>
+          <span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%"></span>
+          Message sent successfully. I will be in touch shortly.
+        </div>
+      </form>
     </div>
   </div>
 </section>
-
-<script>
-  // Form submission handler
-  // To activate: add action="https://formspree.io/f/YOUR_ID" method="POST" to the form element
-  // and remove this script. Or connect to any backend endpoint.
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const successMsg = document.getElementById('form-success');
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const action = form.getAttribute('action');
-
-    if (action) {
-      try {
-        const res = await fetch(action, {
-          method: 'POST',
-          body: formData,
-          headers: { Accept: 'application/json' },
-        });
-        if (res.ok) {
-          form.reset();
-          successMsg?.classList.remove('hidden');
-        }
-      } catch {
-        // Fallback: open mailto
-        window.location.href = `mailto:info@wilderton.ca?subject=${encodeURIComponent(formData.get('subject') as string)}`;
-      }
-    } else {
-      // No action configured — open mailto fallback
-      const subject = formData.get('subject') as string;
-      const name = formData.get('name') as string;
-      const message = formData.get('message') as string;
-      window.location.href = `mailto:info@wilderton.ca?subject=${encodeURIComponent(subject || 'Inquiry')}&body=${encodeURIComponent(`From: ${name}\n\n${message}`)}`;
-    }
-  });
-</script>

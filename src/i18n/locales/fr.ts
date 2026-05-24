@@ -9,8 +9,14 @@ export const fr: Translations = {
   nav: {
     services: 'Services',
     about: 'À propos',
+    practice: 'Pratique',
+    portfolio: 'Portfolio',
     contact: 'Contact',
     book: 'Planifier un appel',
+    theme_light: 'CL',
+    theme_dark: 'SO',
+    theme_light_label: 'Mode clair',
+    theme_dark_label: 'Mode sombre',
   },
   hero: {
     eyebrow: 'Conseil Stratégique en TI',
@@ -76,10 +82,10 @@ export const fr: Translations = {
       },
       {
         number: '07',
-        title: 'Développement web & Architecture',
+        title: 'Développement SaaS & Applications web sur mesure',
         description:
-          'Développement de sites web personnalisés avec Astro, Tailwind, GitHub et Vercel. Conçus pour l\'évolutivité, la réutilisation multi-locataires et l\'image de marque professionnelle — techniquement structurés, sécurisés et performants.',
-        tags: ['Astro', 'Tailwind', 'Vercel'],
+          'Conception et développement de plateformes SaaS, CRM et applications web orientées données. Des architectures multi-locataires aux pipelines d\'ingestion automatisés, en passant par les tableaux de bord administratifs et les vitrines bilingues — conçus pour la performance et la pérennité.',
+        tags: ['Next.js', 'Supabase', 'SaaS'],
       },
       {
         number: '08',
@@ -115,6 +121,7 @@ export const fr: Translations = {
   whyus: {
     eyebrow: 'Pourquoi Wilderton',
     headline: 'Ce qui distingue cette pratique',
+    labels: ['A · Exécutif', 'B · Systémique', 'C · Direct', 'D · Conforme'],
     items: [
       {
         title: 'Fluidité exécutive',
@@ -135,6 +142,29 @@ export const fr: Translations = {
         title: 'Prêt pour la conformité',
         description:
           'Expertise approfondie en Loi 25, cadres de cybersécurité et gestion des risques. Votre organisation est toujours prête pour les audits — et votre équipe de direction, toujours informée.',
+      },
+    ],
+  },
+  portfolio: {
+    eyebrow: 'Réalisations',
+    headline: 'Projets web.',
+    subheadline: 'Une sélection de produits numériques conçus et développés de bout en bout.',
+    items: [
+      {
+        name: 'DeskAbroad',
+        url: 'deskabroad.co',
+        href: 'https://www.deskabroad.co/',
+        category: 'Répertoire · Voyage',
+        description: 'Répertoire mondial d\'espaces de coworking, coliving et cafés pour les nomades numériques. Pipeline d\'ingestion automatisé qui collecte, score et publie des établissements à grande échelle — complété par des guides éditoriaux.',
+        tags: ['Next.js', 'TypeScript', 'Ingestion automatisée', 'Pipeline de données'],
+      },
+      {
+        name: 'Skylevels',
+        url: 'skylevels.co',
+        href: 'https://www.skylevels.co/',
+        category: 'Répertoire · Lifestyle',
+        description: 'Répertoire mondial de bars et restaurants sur les toits — plus de 1 880 établissements en 9 langues. Collecte automatisée et architecture SEO complète.',
+        tags: ['Next.js', 'TypeScript', '9 langues', '1 880+ établissements'],
       },
     ],
   },

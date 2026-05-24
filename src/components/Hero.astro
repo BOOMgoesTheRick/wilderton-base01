@@ -9,167 +9,164 @@ interface Props {
 
 const { t, locale } = Astro.props;
 const h = t.hero;
+
+const headlineLines = locale === 'en'
+  ? ['Technology', 'Leadership for', 'Organizations']
+  : ['Leadership', 'technologique pour', 'les organisations'];
 ---
 
-<section class="relative min-h-screen bg-navy flex flex-col justify-center overflow-hidden">
-  <!-- Dot grid pattern -->
-  <div
-    class="absolute inset-0 pointer-events-none"
-    style="background-image: radial-gradient(rgba(198,167,94,0.08) 1.5px, transparent 1.5px); background-size: 30px 30px;"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Radial glow accents -->
-  <div
-    class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
-  <div
-    class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-navy-light/80 blur-3xl pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Top gold rule -->
-  <div
-    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Decorative vertical line (right side) -->
-  <div
-    class="absolute right-16 top-32 bottom-32 w-px bg-gradient-to-b from-transparent via-gold/20 to-transparent hidden xl:block"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Main content -->
-  <div class="relative z-10 container mx-auto px-6 lg:px-16 xl:px-24 pt-32 pb-20">
-    <div class="max-w-4xl">
-      <!-- Eyebrow -->
-      <div
-        class="hero-animate flex items-center gap-4 mb-10"
-        style="animation-delay: 0.1s; animation-fill-mode: forwards;"
-      >
-        <div class="w-10 h-px bg-gold" aria-hidden="true"></div>
-        <span class="section-eyebrow">{h.eyebrow}</span>
-      </div>
-
-      <!-- Headline -->
-      <h1
-        class="hero-animate font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-cream leading-[1.08] mb-8"
-        style="animation-delay: 0.25s; animation-fill-mode: forwards;"
-      >
-        {h.headline}
+<section class="hero" id="top">
+  <div class="hero-honeycomb" id="honeycomb" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">{h.eyebrow}</span>
+      <h1 class="display" aria-label={headlineLines.join(' ')}>
+        {headlineLines.map((line) => (
+          <span class="ln" data-text={line} aria-hidden="true"></span>
+        ))}
       </h1>
-
-      <!-- Gold divider -->
-      <div
-        class="hero-animate w-16 h-0.5 bg-gold mb-8"
-        style="animation-delay: 0.38s; animation-fill-mode: forwards;"
-        aria-hidden="true"
-      >
-      </div>
-
-      <!-- Subheadline -->
-      <p
-        class="hero-animate font-body text-lg md:text-xl text-cream/65 max-w-2xl leading-relaxed mb-14"
-        style="animation-delay: 0.45s; animation-fill-mode: forwards;"
-      >
-        {h.subheadline}
-      </p>
-
-      <!-- CTAs -->
-      <div
-        class="hero-animate flex flex-col sm:flex-row gap-4 mb-24"
-        style="animation-delay: 0.58s; animation-fill-mode: forwards;"
-      >
-        <a href={`/${locale}/#services`} class="btn-primary">
-          {h.cta_primary}
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </a>
-        <a href={`/${locale}/#contact`} class="btn-outline">
-          {h.cta_secondary}
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Stats row -->
-      <div
-        class="hero-animate"
-        style="animation-delay: 0.72s; animation-fill-mode: forwards;"
-      >
-        <div
-          class="h-px bg-gradient-to-r from-gold/40 via-gold/15 to-transparent mb-8"
-          aria-hidden="true"
-        >
-        </div>
-        <div class="grid grid-cols-3 gap-6 sm:gap-12 max-w-lg">
-          <div>
-            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
-              {h.stat1_value}
-            </div>
-            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
-              {h.stat1_label}
-            </div>
-          </div>
-          <div>
-            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
-              {h.stat2_value}
-            </div>
-            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
-              {h.stat2_label}
-            </div>
-          </div>
-          <div>
-            <div class="font-display text-3xl sm:text-4xl font-bold text-gold mb-1.5">
-              {h.stat3_value}
-            </div>
-            <div class="font-body text-[11px] text-cream/45 uppercase tracking-widest leading-snug">
-              {h.stat3_label}
-            </div>
-          </div>
-        </div>
+      <p class="lede">{h.subheadline}</p>
+      <div class="hero-cta">
+        <a class="btn" href="#services">{h.cta_primary} <span class="arr">→</span></a>
+        <a class="btn ghost" href="#contact">{h.cta_secondary} <span class="arr">→</span></a>
       </div>
     </div>
-  </div>
 
-  <!-- Scroll indicator -->
-  <div
-    class="hero-animate absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-    style="animation-delay: 1s; animation-fill-mode: forwards;"
-    aria-hidden="true"
-  >
-    <div class="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent animate-scroll-line">
-    </div>
+    <aside class="hero-meta">
+      <div class="row"><span>v.2026.05</span><span class="ln"></span></div>
+      <div class="row"><span>Québec · CA</span><span class="ln"></span></div>
+      <div class="row"><span>Booking · Q3</span><span class="ln"></span></div>
+      <div class="hero-coord" style="margin-top:24px">
+        <span><b>46.81°N</b></span>
+        <span><b>71.21°W</b></span>
+      </div>
+    </aside>
   </div>
 </section>
+
+<script>
+  (function honeycomb() {
+    const host = document.getElementById('honeycomb');
+    if (!host) return;
+
+    const size = 34;
+    const w = Math.sqrt(3) * size;
+    const vSpace = size * 1.5;
+    const W = window.innerWidth;
+    const H = 900;
+    const cols = Math.ceil(W / w) + 2;
+    const rows = Math.ceil(H / vSpace) + 2;
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+    function hexPath(cx: number, cy: number, r: number) {
+      let d = '';
+      for (let i = 0; i < 6; i++) {
+        const a = (Math.PI / 3) * i + Math.PI / 6;
+        const x = cx + r * Math.cos(a);
+        const y = cy + r * Math.sin(a);
+        d += (i === 0 ? 'M' : 'L') + x.toFixed(2) + ' ' + y.toFixed(2) + ' ';
+      }
+      return d + 'Z';
+    }
+
+    const cells: SVGPathElement[] = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const cx = c * w + (r % 2 ? w / 2 : 0);
+        const cy = r * vSpace;
+        const p = document.createElementNS(svgNS, 'path');
+        p.setAttribute('d', hexPath(cx, cy, size - 2));
+        p.setAttribute('fill', 'none');
+        p.setAttribute('stroke', 'currentColor');
+        p.setAttribute('stroke-width', '0.6');
+        p.setAttribute('opacity', '0.10');
+        svg.appendChild(p);
+        cells.push(p);
+      }
+    }
+    host.appendChild(svg);
+
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      function pulse() {
+        const n = Math.max(2, Math.floor(cells.length * 0.012));
+        for (let i = 0; i < n; i++) {
+          const cell = cells[Math.floor(Math.random() * cells.length)];
+          const roll = Math.random();
+          const accent = roll < 0.18;
+          const fillIt = !accent && roll < 0.45;
+          cell.style.transition = 'opacity .8s ease, fill .8s ease, stroke .8s ease';
+          cell.setAttribute('opacity', accent ? '0.9' : fillIt ? '0.16' : '0.32');
+          if (accent) {
+            const ac = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#E5481A';
+            cell.setAttribute('stroke', ac);
+            cell.setAttribute('stroke-width', '1.2');
+          } else if (fillIt) {
+            cell.setAttribute('fill', 'currentColor');
+          }
+          setTimeout(() => {
+            cell.setAttribute('opacity', '0.10');
+            cell.setAttribute('fill', 'none');
+            cell.setAttribute('stroke', 'currentColor');
+            cell.setAttribute('stroke-width', '0.6');
+          }, 900 + Math.random() * 1400);
+        }
+      }
+      pulse();
+      setInterval(pulse, 1100);
+
+      svg.style.transition = 'transform .6s cubic-bezier(.2,.7,.2,1)';
+      document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 14;
+        const y = (e.clientY / window.innerHeight - 0.5) * 10;
+        svg.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }, { passive: true });
+    }
+  })();
+
+  (function typewriter() {
+    const lines = document.querySelectorAll<HTMLElement>('.display .ln[data-text]');
+    if (!lines.length) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      lines.forEach(ln => { ln.textContent = ln.dataset.text || ''; });
+      return;
+    }
+
+    const cursor = document.createElement('span');
+    cursor.className = 'type-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+
+    let lineIdx = 0;
+    let charIdx = 0;
+
+    function delay(): number {
+      const r = Math.random();
+      if (r < 0.06) return 240 + Math.random() * 160; // hesitation
+      if (r < 0.20) return 85 + Math.random() * 65;   // slow key
+      return 36 + Math.random() * 42;                  // normal
+    }
+
+    function type() {
+      if (lineIdx >= lines.length) return;
+      const ln = lines[lineIdx];
+      const text = ln.dataset.text || '';
+      if (!ln.contains(cursor)) ln.appendChild(cursor);
+      if (charIdx < text.length) {
+        ln.insertBefore(document.createTextNode(text[charIdx]), cursor);
+        charIdx++;
+        setTimeout(type, delay());
+      } else {
+        lineIdx++;
+        charIdx = 0;
+        setTimeout(type, 260 + Math.random() * 160);
+      }
+    }
+
+    setTimeout(type, 320);
+  })();
+</script>

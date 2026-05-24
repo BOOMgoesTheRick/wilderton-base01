@@ -9,8 +9,14 @@ export const en: Translations = {
   nav: {
     services: 'Services',
     about: 'About',
+    practice: 'Practice',
+    portfolio: 'Portfolio',
     contact: 'Contact',
     book: 'Book a Call',
+    theme_light: 'LT',
+    theme_dark: 'DK',
+    theme_light_label: 'Light mode',
+    theme_dark_label: 'Dark mode',
   },
   hero: {
     eyebrow: 'Strategic IT Advisory',
@@ -76,10 +82,10 @@ export const en: Translations = {
       },
       {
         number: '07',
-        title: 'Web Development & Architecture',
+        title: 'Custom SaaS & Web Application Development',
         description:
-          'Custom website development using modern frameworks (Astro, Tailwind, GitHub, Vercel). Designed for scalability, multi-tenant reuse, dynamic theming, and professional branding — secure, performant, and technically structured.',
-        tags: ['Astro', 'Tailwind', 'Vercel'],
+          'Design and development of custom SaaS platforms, CRMs, and data-driven web applications. From multi-tenant architectures and automated ingestion pipelines to admin dashboards and bilingual storefronts — built for scale, performance, and long-term maintainability.',
+        tags: ['Next.js', 'Supabase', 'SaaS'],
       },
       {
         number: '08',
@@ -115,6 +121,7 @@ export const en: Translations = {
   whyus: {
     eyebrow: 'Why Wilderton',
     headline: 'What Sets This Practice Apart',
+    labels: ['A · Executive', 'B · Systemic', 'C · Direct', 'D · Audit-Ready'],
     items: [
       {
         title: 'Executive Fluency',
@@ -135,6 +142,29 @@ export const en: Translations = {
         title: 'Compliance Ready',
         description:
           'Deep expertise in Loi 25, cybersecurity frameworks, and risk management means your organization is always audit-ready — and your leadership team is always informed.',
+      },
+    ],
+  },
+  portfolio: {
+    eyebrow: 'Selected Work',
+    headline: 'Web projects.',
+    subheadline: 'A selection of digital products designed and built end-to-end.',
+    items: [
+      {
+        name: 'DeskAbroad',
+        url: 'deskabroad.co',
+        href: 'https://www.deskabroad.co/',
+        category: 'Directory · Travel',
+        description: 'Global coworking, coliving, and café directory for digital nomads. Automated data ingestion pipeline collects, scores, and publishes venues at scale — paired with editorial city guides.',
+        tags: ['Next.js', 'TypeScript', 'Automated Ingestion', 'Data Pipeline'],
+      },
+      {
+        name: 'Skylevels',
+        url: 'skylevels.co',
+        href: 'https://www.skylevels.co/',
+        category: 'Directory · Lifestyle',
+        description: 'Worldwide rooftop bar and restaurant directory covering 1,880+ venues across 9 languages. Automated venue collection and full SEO architecture.',
+        tags: ['Next.js', 'TypeScript', '9 Languages', '1,880+ Venues'],
       },
     ],
   },

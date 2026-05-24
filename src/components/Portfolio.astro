@@ -1,0 +1,46 @@
+---
+import type { Translations } from '../i18n/types';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const p = t.portfolio;
+---
+
+<section class="sec" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">{p.eyebrow}</div>
+      <div>
+        <h2 class="sec-title">{p.headline}</h2>
+        <p class="sec-sub">{p.subheadline}</p>
+      </div>
+    </div>
+
+    <div class="port-grid">
+      {p.items.map((item) => (
+        <a href={item.href} target="_blank" rel="noopener noreferrer" class="port-card reveal">
+          <div class="port-bar">
+            <span class="port-dots">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="port-url">{item.url}</span>
+            <span class="port-ext">↗</span>
+          </div>
+          <div class="port-body">
+            <div class="port-cat">{item.category}</div>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+            <div class="port-chips">
+              {item.tags.map((tag) => (
+                <span class="port-chip">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -18,8 +18,14 @@ export interface Translations {
   nav: {
     services: string;
     about: string;
+    practice: string;
+    portfolio: string;
     contact: string;
     book: string;
+    theme_light: string;
+    theme_dark: string;
+    theme_light_label: string;
+    theme_dark_label: string;
   };
   hero: {
     eyebrow: string;
@@ -50,7 +56,21 @@ export interface Translations {
   whyus: {
     eyebrow: string;
     headline: string;
+    labels: string[];
     items: WhyUsItem[];
+  };
+  portfolio: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    items: {
+      name: string;
+      url: string;
+      href: string;
+      category: string;
+      description: string;
+      tags: string[];
+    }[];
   };
   contact: {
     eyebrow: string;

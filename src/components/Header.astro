@@ -11,206 +11,80 @@ interface Props {
 const { t, locale } = Astro.props;
 const otherLocale = getOtherLocale(locale);
 const otherLabel = getOtherLocaleLabel(locale);
+const otherLocalePath = `/${otherLocale}/`;
 ---
 
-<header
-  id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
->
-  <!-- Top gold accent line -->
-  <div class="h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"></div>
-
-  <div
-    id="header-inner"
-    class="flex items-center justify-between px-6 lg:px-12 py-5 transition-all duration-500"
-  >
-    <!-- Logo -->
-    <a
-      href={`/${locale}/`}
-      class="flex items-center gap-3 group"
-      aria-label="Wilderton Advisory — Home"
-    >
-      <!-- W Mark -->
-      <div
-        class="w-9 h-9 flex items-center justify-center border border-gold/60 group-hover:border-gold transition-colors duration-300"
-      >
-        <svg
-          width="20"
-          height="16"
-          viewBox="0 0 20 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M1 1L5.5 15L10 6L14.5 15L19 1"
-            stroke="#C6A75E"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href={`/${locale}/`} class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon points="12,2 22,7 22,17 12,22 2,17 2,7"></polygon>
+          <polygon points="12,5 19,8.5 19,15.5 12,19 5,15.5 5,8.5" fill="currentColor" stroke="none"></polygon>
         </svg>
-      </div>
-
-      <!-- Name -->
-      <div class="leading-tight">
-        <div
-          class="font-display font-semibold text-sm tracking-wider text-cream/95 group-hover:text-cream transition-colors"
-        >
-          WILDERTON
-        </div>
-        <div class="font-body text-gold/80 text-[10px] tracking-[0.2em] uppercase">
-          {locale === 'fr' ? 'Conseil' : 'Advisory'}
-        </div>
-      </div>
+      </span>
+      WILDERTON&nbsp;/&nbsp;Advisory
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden lg:flex items-center gap-10" aria-label="Main navigation">
-      <a
-        href={`/${locale}/#services`}
-        class="text-cream/70 hover:text-gold text-sm font-body tracking-wide transition-colors duration-200"
-      >
-        {t.nav.services}
-      </a>
-      <a
-        href={`/${locale}/#about`}
-        class="text-cream/70 hover:text-gold text-sm font-body tracking-wide transition-colors duration-200"
-      >
-        {t.nav.about}
-      </a>
-      <a
-        href={`/${locale}/#contact`}
-        class="text-cream/70 hover:text-gold text-sm font-body tracking-wide transition-colors duration-200"
-      >
-        {t.nav.contact}
-      </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">{t.nav.services}</a>
+      <a href="#about">{t.nav.about}</a>
+      <a href="#why">{t.nav.practice}</a>
+      <a href="#portfolio">{t.nav.portfolio}</a>
+      <a href="#contact">{t.nav.contact}</a>
     </nav>
 
-    <!-- Right side actions -->
-    <div class="hidden lg:flex items-center gap-5">
-      <!-- Language switcher -->
-      <a
-        href={`/${otherLocale}/`}
-        class="text-cream/50 hover:text-gold text-xs font-body font-semibold tracking-[0.18em] uppercase border border-cream/20 hover:border-gold/50 px-3 py-1.5 transition-all duration-200"
-        aria-label={`Switch to ${otherLabel}`}
-      >
-        {otherLabel}
+    <div class="nav-right">
+      <a class="lang" href={otherLocalePath} aria-label={`Switch to ${otherLabel}`}>
+        {locale.toUpperCase()}&nbsp;·&nbsp;<span style="opacity:.4">{otherLabel}</span>
       </a>
-
-      <!-- CTA -->
-      <a href={`/${locale}/#contact`} class="btn-primary text-xs py-3 px-6">
-        {t.nav.book}
-        <svg
-          class="w-3.5 h-3.5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </a>
-    </div>
-
-    <!-- Mobile menu button -->
-    <div class="lg:hidden flex items-center gap-4">
-      <a
-        href={`/${otherLocale}/`}
-        class="text-cream/50 hover:text-gold text-xs font-body font-semibold tracking-widest uppercase transition-colors"
-      >
-        {otherLabel}
-      </a>
-      <button
-        id="mobile-menu-toggle"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        class="flex flex-col gap-1.5 p-1 group"
-      >
-        <span
-          class="w-6 h-px bg-cream/70 group-hover:bg-gold transition-all duration-300 origin-center"
-          id="burger-top"></span>
-        <span
-          class="w-4 h-px bg-cream/70 group-hover:bg-gold transition-all duration-300"
-          id="burger-mid"></span>
-        <span
-          class="w-6 h-px bg-cream/70 group-hover:bg-gold transition-all duration-300 origin-center"
-          id="burger-bot"></span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu overlay -->
-  <div
-    id="mobile-menu"
-    class="lg:hidden hidden absolute top-full left-0 right-0 bg-navy-dark border-t border-gold/20 py-8 px-6"
-  >
-    <nav class="flex flex-col gap-6" aria-label="Mobile navigation">
-      <a
-        href={`/${locale}/#services`}
-        class="text-cream/80 hover:text-gold text-lg font-body tracking-wide transition-colors duration-200 mobile-nav-link"
-      >
-        {t.nav.services}
-      </a>
-      <a
-        href={`/${locale}/#about`}
-        class="text-cream/80 hover:text-gold text-lg font-body tracking-wide transition-colors duration-200 mobile-nav-link"
-      >
-        {t.nav.about}
-      </a>
-      <a
-        href={`/${locale}/#contact`}
-        class="text-cream/80 hover:text-gold text-lg font-body tracking-wide transition-colors duration-200 mobile-nav-link"
-      >
-        {t.nav.contact}
-      </a>
-      <div class="pt-4 border-t border-gold/20">
-        <a href={`/${locale}/#contact`} class="btn-primary w-full justify-center">
-          {t.nav.book}
-        </a>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button id="th-lt" aria-pressed="true" title={t.nav.theme_light_label}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          {t.nav.theme_light}
+        </button>
+        <button id="th-dk" aria-pressed="false" title={t.nav.theme_dark_label}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+          </svg>
+          {t.nav.theme_dark}
+        </button>
       </div>
-    </nav>
+    </div>
   </div>
 </header>
 
 <script>
-  // Header scroll behavior
-  const header = document.getElementById('site-header');
-  const headerInner = document.getElementById('header-inner');
+  (function theme() {
+    const root = document.documentElement;
+    const lt = document.getElementById('th-lt') as HTMLButtonElement | null;
+    const dk = document.getElementById('th-dk') as HTMLButtonElement | null;
+    if (!lt || !dk) return;
 
-  function updateHeader() {
-    if (window.scrollY > 40) {
-      header?.classList.add('bg-navy/95', 'backdrop-blur-md', 'shadow-lg', 'shadow-navy-dark/40');
-      headerInner?.classList.replace('py-5', 'py-3');
-    } else {
-      header?.classList.remove('bg-navy/95', 'backdrop-blur-md', 'shadow-lg', 'shadow-navy-dark/40');
-      headerInner?.classList.replace('py-3', 'py-5');
+    function apply(mode: string) {
+      if (mode === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+        lt!.setAttribute('aria-pressed', 'false');
+        dk!.setAttribute('aria-pressed', 'true');
+      } else {
+        root.removeAttribute('data-theme');
+        lt!.setAttribute('aria-pressed', 'true');
+        dk!.setAttribute('aria-pressed', 'false');
+      }
+      try {
+        localStorage.setItem('wilderton-theme', mode);
+        localStorage.setItem('wilderton-theme-exp', String(Date.now() + 5 * 86400 * 1000));
+      } catch (_) {}
     }
-  }
 
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
+    // Sync button state with theme already applied by the blocking inline script in <head>
+    const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    apply(current);
 
-  // Mobile menu toggle
-  const toggle = document.getElementById('mobile-menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  toggle?.addEventListener('click', () => {
-    const isOpen = menu?.classList.contains('hidden') === false;
-    menu?.classList.toggle('hidden');
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-  });
-
-  // Close mobile menu on link click
-  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu?.classList.add('hidden');
-      toggle?.setAttribute('aria-expanded', 'false');
-    });
-  });
+    lt.addEventListener('click', () => apply('light'));
+    dk.addEventListener('click', () => apply('dark'));
+  })();
 </script>

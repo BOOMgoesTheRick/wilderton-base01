@@ -11,7 +11,7 @@ const { title, description, lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@ const { title, description, lang } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -32,25 +32,58 @@ const { title, description, lang } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+
+    <!-- Blocking theme init — must run before body renders to prevent FOUC -->
+    <script is:inline>
+      (function () {
+        try {
+          var exp = localStorage.getItem('wilderton-theme-exp');
+          var saved = exp && Date.now() < Number(exp) ? localStorage.getItem('wilderton-theme') : null;
+          var theme = saved || (new Date().getHours() >= 20 || new Date().getHours() < 7 ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-cream font-body text-navy antialiased">
+  <body>
     <slot />
 
-    <!-- Scroll-reveal observer -->
+    <!-- Fixed status bar -->
+    <div class="statusbar" aria-hidden="true">
+      <div class="lt">
+        <span><span class="blip"></span>System Operational</span>
+        <span>Lat 46.81 · Lon −71.21</span>
+      </div>
+      <div class="rt">
+        <span id="clock">--:--:--</span>
+        <span>UTC−05</span>
+      </div>
+    </div>
+
+    <!-- Scroll reveal observer -->
     <script>
-      const observer = new IntersectionObserver(
+      const io = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('on');
+              io.unobserve(e.target);
             }
           });
         },
         { threshold: 0.12 }
       );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
 
-      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    <!-- Live clock -->
+    <script>
+      function pad(n: number) { return String(n).padStart(2, '0'); }
+      setInterval(() => {
+        const d = new Date();
+        const cl = document.getElementById('clock');
+        if (cl) cl.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+      }, 1000);
     </script>
   </body>
 </html>
