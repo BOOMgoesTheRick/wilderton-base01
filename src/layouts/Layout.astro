@@ -8,6 +8,28 @@ interface Props {
 }
 
 const { title, description, lang } = Astro.props;
+
+const site = 'https://wilderton-advisory.com';
+const canonicalUrl = `${site}/${lang}/`;
+const altLang = lang === 'en' ? 'fr' : 'en';
+const ogLocale = lang === 'en' ? 'en_CA' : 'fr_CA';
+const ogLocaleAlt = lang === 'en' ? 'fr_CA' : 'en_CA';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Wilderton Advisory',
+  url: site,
+  logo: `${site}/favicon.svg`,
+  description: lang === 'en'
+    ? 'Strategic IT advisory for digital transformation, cybersecurity, Microsoft 365 architecture, and governance.'
+    : "Conseil stratégique en TI pour la transformation numérique, la cybersécurité, l'architecture Microsoft 365 et la gouvernance.",
+  founder: { '@type': 'Person', name: 'Eric B.' },
+  areaServed: { '@type': 'Country', name: 'Canada' },
+  knowsLanguage: ['en', 'fr'],
+  serviceType: 'IT Consulting',
+  address: { '@type': 'PostalAddress', addressCountry: 'CA', addressRegion: 'QC' },
+};
 ---
 
 <!doctype html>
@@ -19,6 +41,12 @@ const { title, description, lang } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={`${site}/en/`} />
+    <link rel="alternate" hreflang="fr" href={`${site}/fr/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +60,18 @@ const { title, description, lang } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+    <meta property="og:site_name" content="Wilderton Advisory" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Blocking theme init — must run before body renders to prevent FOUC -->
     <script is:inline>
