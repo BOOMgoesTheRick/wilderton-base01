@@ -145,6 +145,68 @@ export const fr: Translations = {
       },
     ],
   },
+  questions: {
+    eyebrow: 'Diagnostic',
+    headline: 'Les bonnes questions à se poser',
+    items: [
+      {
+        question: 'Ai-je la bonne personne pour prendre les décisions techniques?',
+        description: 'Trop souvent, des décisions techniques cruciales sont prises par des gens ayant peu ou pas d\'expérience technique. Une mauvaise gouvernance ne fait pas que ralentir les projets. Elle finit par engendrer des failles de sécurité, des dépenses inutiles et des systèmes que plus personne ne peut maintenir.',
+      },
+      {
+        question: 'Est-ce que je sais réellement où résident mes données?',
+        description: 'La plupart des organisations sont incapables de répondre avec précision, ce qui veut dire qu\'elles ignorent aussi qui y a accès, où elles sont sauvegardées et si elles franchissent les frontières. Sous la Loi 25, « on n\'est pas certain » n\'est pas une position défendable.',
+      },
+      {
+        question: 'Si nous étions frappés par un rançongiciel demain, combien de temps avant d\'être de nouveau opérationnels?',
+        description: 'Bien des dirigeants présument qu\'« avoir des sauvegardes » équivaut à « pouvoir récupérer ». C\'est faux. La vraie question est le temps de récupération, et la plupart découvrent l\'écart quand il est déjà trop tard.',
+      },
+      {
+        question: 'Est-ce que j\'achète des produits, ou est-ce que je bâtis un système?',
+        description: 'Une sécurité et une infrastructure assemblées à partir d\'achats isolés laissent des coutures, et c\'est dans les coutures que vivent les attaquants. Une architecture cohérente coûte moins cher à long terme qu\'un tiroir rempli d\'outils qui ne se parlent pas.',
+      },
+      {
+        question: 'Qui est responsable lorsqu\'une panne survient?',
+        description: 'Si la réponse honnête est « ça dépend » ou « le fournisseur », vous avez un problème de gouvernance, pas un problème technique. Une responsabilité qui appartient à tout le monde n\'appartient à personne.',
+      },
+      {
+        question: 'Nos dépenses TI sont-elles alignées sur nos risques réels?',
+        description: 'Les budgets sont souvent façonnés par l\'habitude, les relations avec les fournisseurs ou la dernière crise, plutôt que par une vision lucide de ce qui nuirait véritablement le plus à l\'organisation.',
+      },
+      {
+        question: 'Quand la personne qui a tout configuré partira, que se passera-t-il?',
+        description: 'Les systèmes non documentés et le savoir informel sont des passifs silencieux. Si un seul départ peut paralyser vos opérations, vous n\'avez pas une infrastructure. Vous avez une dépendance.',
+      },
+      {
+        question: 'Utilisons-nous Microsoft 365, ou ne faisons-nous que le payer?',
+        description: 'La plupart des organisations exploitent une fraction de ce qu\'elles possèdent et en configurent encore moins. L\'écart entre ce que M365 peut faire et ce que vous avez réellement déployé, c\'est généralement là que se cachent à la fois votre risque de sécurité et vos dépenses gaspillées.',
+      },
+      {
+        question: 'Comment déployons-nous encore nos appareils, à la main?',
+        description: 'Si l\'intégration d\'un nouvel employé exige que quelqu\'un configure manuellement un portable, vous payez du temps spécialisé pour une tâche qui devrait être automatisée. Le déploiement moderne n\'est pas un luxe. C\'est la différence entre un employé productif dès le premier jour ou seulement au cinquième.',
+      },
+      {
+        question: 'Qui peut accéder à nos systèmes depuis l\'extérieur, et le devrait-il?',
+        description: 'Les accès à distance s\'accumulent discrètement : une règle VPN par-ci, un identifiant partagé par-là. Avec le temps, le périmètre que vous croyez avoir et celui que vous avez réellement divergent. Les attaquants trouvent l\'écart avant vous.',
+      },
+      {
+        question: 'Notre courriel est-il réellement digne de confiance, pour nous comme pour nos destinataires?',
+        description: 'Sans authentification adéquate (SPF, DKIM, DMARC), votre domaine peut être usurpé, vos courriels légitimes aboutissent dans les indésirables et votre marque devient un vecteur de fraude. La plupart des organisations ne le vérifient pas avant qu\'un client demande pourquoi il a reçu une fausse facture « de votre part ».',
+      },
+      {
+        question: 'Quelle part de la semaine de mon équipe est consacrée à des tâches qu\'un script pourrait accomplir?',
+        description: 'Les tâches manuelles répétitives ne sont pas qu\'un coût de productivité. Chaque étape manuelle est un endroit où quelque chose se fait de façon inconstante, ou s\'oublie. L\'automatisation n\'est pas seulement plus rapide. C\'est ainsi qu\'on rend la sécurité et les processus véritablement reproductibles.',
+      },
+      {
+        question: 'Si nous avons besoin d\'un outil qui n\'existe pas, quelles sont nos options?',
+        description: 'Beaucoup d\'organisations plient leurs processus pour s\'adapter à des logiciels génériques, ou cumulent des abonnements qui fonctionnent presque. Parfois la bonne réponse est de bâtir, mais seulement si quelqu\'un peut vous dire honnêtement quand cela en vaut la peine et quand ce n\'est pas le cas.',
+      },
+      {
+        question: 'Notre technologie correspond-elle à l\'organisation que nous devenons, ou à celle que nous étions?',
+        description: 'Les systèmes choisis il y a trois ans deviennent discrètement des contraintes. La croissance, les nouvelles réglementations, le travail hybride : la question n\'est pas de savoir si vos TI fonctionnent aujourd\'hui, mais si elles peuvent vous porter là où vous allez.',
+      },
+    ],
+  },
   portfolio: {
     eyebrow: 'Réalisations',
     headline: 'Projets web.',

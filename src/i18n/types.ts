@@ -10,6 +10,11 @@ export interface WhyUsItem {
   description: string;
 }
 
+export interface QuestionItem {
+  question: string;
+  description: string;
+}
+
 export interface Translations {
   meta: {
     title: string;
@@ -58,6 +63,11 @@ export interface Translations {
     headline: string;
     labels: string[];
     items: WhyUsItem[];
+  };
+  questions: {
+    eyebrow: string;
+    headline: string;
+    items: QuestionItem[];
   };
   portfolio: {
     eyebrow: string;

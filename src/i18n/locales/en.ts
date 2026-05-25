@@ -145,6 +145,68 @@ export const en: Translations = {
       },
     ],
   },
+  questions: {
+    eyebrow: 'Diagnostic',
+    headline: 'Questions worth asking',
+    items: [
+      {
+        question: 'Do I have the right person making technical decisions?',
+        description: 'More often than not, critical technical decisions are made by people with little or no technical background. Poor governance here doesn\'t just slow projects down. It compounds into security gaps, wasted spend, and systems no one can maintain.',
+      },
+      {
+        question: 'Do I actually know where my data lives?',
+        description: 'Most organizations can\'t answer this precisely, which means they also can\'t answer who has access to it, where it\'s backed up, or whether it crosses borders. Under Loi 25, "we\'re not sure" is not a defensible position.',
+      },
+      {
+        question: 'If we were hit by ransomware tomorrow, how long until we\'re operational?',
+        description: 'Many leaders assume "we have backups" is the same as "we can recover." It isn\'t. The real question is recovery time, and most discover the gap only when it\'s too late to fix.',
+      },
+      {
+        question: 'Am I buying products, or building a system?',
+        description: 'Security and infrastructure assembled from disconnected purchases leave seams, and attackers live in the seams. A coherent architecture costs less over time than a drawer full of tools that don\'t talk to each other.',
+      },
+      {
+        question: 'Who is accountable when something breaks?',
+        description: 'If the honest answer is "it depends" or "the vendor," you have a governance gap, not a technical one. Accountability that lives everywhere lives nowhere.',
+      },
+      {
+        question: 'Is our IT spend aligned with our actual risk?',
+        description: 'Budgets are often shaped by habit, vendor relationships, or last year\'s crisis, rather than a clear-eyed view of what would genuinely hurt the organization most.',
+      },
+      {
+        question: 'When the person who set this up leaves, what happens?',
+        description: 'Undocumented systems and tribal knowledge are silent liabilities. If one departure can paralyze your operations, you don\'t have infrastructure. You have a dependency.',
+      },
+      {
+        question: 'Are we using Microsoft 365, or just paying for it?',
+        description: 'Most organizations license a fraction of what they own and configure even less. The gap between what M365 can do and what you\'ve actually deployed is usually where both your security risk and your wasted spend are hiding.',
+      },
+      {
+        question: 'How are we still deploying devices, by hand?',
+        description: 'If onboarding a new employee means someone manually imaging a laptop, you\'re paying senior time for work that should be automated. Modern deployment isn\'t a luxury. It\'s the difference between a hire being productive on day one or day five.',
+      },
+      {
+        question: 'Who can access our systems from outside, and should they?',
+        description: 'Remote access tends to accumulate quietly: a VPN rule here, a shared login there. Over time the perimeter you think you have and the one you actually have drift apart. Attackers find the difference before you do.',
+      },
+      {
+        question: 'Can our email actually be trusted, by us and by everyone we send to?',
+        description: 'Without proper authentication (SPF, DKIM, DMARC), your domain can be spoofed, your legitimate mail lands in spam, and your brand becomes a vector for fraud. Most organizations don\'t check until a client asks why they received a fake invoice "from you."',
+      },
+      {
+        question: 'How much of my team\'s week is spent on work a script could do?',
+        description: 'Repetitive manual tasks aren\'t just a productivity cost. Every manual step is a place where something gets done inconsistently, or forgotten. Automation isn\'t only faster. It\'s how you make security and process actually repeatable.',
+      },
+      {
+        question: 'If we need a tool that doesn\'t exist, what are our options?',
+        description: 'Many organizations bend their processes to fit off-the-shelf software, or stitch together subscriptions that almost work. Sometimes the right answer is to build, but only if someone can tell you honestly when building is worth it and when it isn\'t.',
+      },
+      {
+        question: 'Does our technology fit the organization we\'re becoming, or the one we were?',
+        description: 'Systems chosen three years ago quietly become constraints. Growth, new regulations, hybrid work: the question isn\'t whether your IT works today, but whether it can carry where you\'re headed.',
+      },
+    ],
+  },
   portfolio: {
     eyebrow: 'Selected Work',
     headline: 'Web projects.',
