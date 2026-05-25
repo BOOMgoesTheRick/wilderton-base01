@@ -14,7 +14,7 @@ const a = t.about;
     <div class="sec-head reveal">
       <div class="sec-tag">{a.eyebrow}</div>
       <div>
-        <h2 class="sec-title">Senior IT advisor. Executive partner. Trusted architect.</h2>
+        <h2 class="sec-title" style="white-space:pre-line">{a.headline}</h2>
       </div>
     </div>
 
@@ -39,27 +39,27 @@ const a = t.about;
       <aside class="about-card reveal">
         <div class="hex-bg" aria-hidden="true"></div>
         <div class="about-card-head">
-          <span>// Practice Snapshot</span>
+          <span>{a.card_title}</span>
           <span>2026</span>
         </div>
         <div class="about-card-row">
           <div class="about-stat">
             <div class="num">50+</div>
-            <div class="lab">Projects</div>
+            <div class="lab">{a.stat_projects}</div>
           </div>
           <div class="about-stat">
             <div class="num">10</div>
-            <div class="lab">Domains</div>
+            <div class="lab">{a.stat_domains}</div>
           </div>
         </div>
         <div class="ticker">
-          <span>STATUS</span><span><b id="liveStatus">● Available · Q3</b></span>
+          <span>{a.status_label}</span><span><b id="liveStatus">{a.status_value}</b></span>
         </div>
         <div class="ticker">
-          <span>UPTIME</span><span><b id="uptime">00:00:00</b></span>
+          <span>{a.uptime_label}</span><span><b id="uptime">00:00:00</b></span>
         </div>
         <div class="ticker">
-          <span>RESPONSE</span><span><b>&lt; 24h</b></span>
+          <span>{a.response_label}</span><span><b>&lt; 24h</b></span>
         </div>
       </aside>
     </div>

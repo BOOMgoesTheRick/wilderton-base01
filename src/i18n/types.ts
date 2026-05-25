@@ -44,6 +44,7 @@ export interface Translations {
     stat2_label: string;
     stat3_value: string;
     stat3_label: string;
+    booking: string;
   };
   services: {
     eyebrow: string;
@@ -57,6 +58,13 @@ export interface Translations {
     body: string;
     body2: string;
     signature: string;
+    card_title: string;
+    stat_projects: string;
+    stat_domains: string;
+    status_label: string;
+    status_value: string;
+    uptime_label: string;
+    response_label: string;
   };
   whyus: {
     eyebrow: string;
@@ -105,6 +113,10 @@ export interface Translations {
   };
   footer: {
     tagline: string;
+    desc: string;
+    nav_heading: string;
+    lang_heading: string;
+    legal_heading: string;
     rights: string;
     privacy: string;
     links: {

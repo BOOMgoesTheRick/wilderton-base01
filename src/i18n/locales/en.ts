@@ -31,6 +31,7 @@ export const en: Translations = {
     stat2_label: 'Areas of Expertise',
     stat3_value: '100%',
     stat3_label: 'Executive-Focused',
+    booking: 'Booking · Q3',
   },
   services: {
     eyebrow: 'Advisory Services',
@@ -117,6 +118,13 @@ export const en: Translations = {
     body2:
       'Every engagement starts with listening — to your strategy, your constraints, and your risk tolerance. The result is always a solution designed for your organization, not adapted from a template.',
     signature: 'Wilderton Advisory',
+    card_title: '// Practice Snapshot',
+    stat_projects: 'Projects',
+    stat_domains: 'Domains',
+    status_label: 'STATUS',
+    status_value: '● Available · Q3',
+    uptime_label: 'UPTIME',
+    response_label: 'RESPONSE',
   },
   whyus: {
     eyebrow: 'Why Wilderton',
@@ -254,6 +262,10 @@ export const en: Translations = {
   },
   footer: {
     tagline: 'Strategic IT Advisory',
+    desc: 'Strategic IT Advisory. Architecture, governance, and security for executives who demand excellence.',
+    nav_heading: 'Navigation',
+    lang_heading: 'Language',
+    legal_heading: 'Legal',
     rights: '© 2026 Wilderton Advisory. All rights reserved.',
     privacy: 'Privacy Policy',
     links: {

@@ -31,6 +31,7 @@ export const fr: Translations = {
     stat2_label: 'Domaines d\'expertise',
     stat3_value: '100%',
     stat3_label: 'Orienté dirigeants',
+    booking: 'Réservation · T3',
   },
   services: {
     eyebrow: 'Services-conseils',
@@ -117,6 +118,13 @@ export const fr: Translations = {
     body2:
       'Chaque mandat commence par l\'écoute — votre stratégie, vos contraintes et votre tolérance au risque. Le résultat est toujours une solution conçue pour votre organisation, non adaptée d\'un gabarit.',
     signature: 'Wilderton Conseil',
+    card_title: '// Aperçu du cabinet',
+    stat_projects: 'Projets',
+    stat_domains: 'Domaines',
+    status_label: 'STATUT',
+    status_value: '● Disponible · T3',
+    uptime_label: 'DISPONIBILITÉ',
+    response_label: 'RÉPONSE',
   },
   whyus: {
     eyebrow: 'Pourquoi Wilderton',
@@ -254,6 +262,10 @@ export const fr: Translations = {
   },
   footer: {
     tagline: 'Conseil Stratégique en TI',
+    desc: 'Conseil stratégique en TI. Architecture, gouvernance et sécurité pour les dirigeants qui exigent l\'excellence.',
+    nav_heading: 'Navigation',
+    lang_heading: 'Langue',
+    legal_heading: 'Légal',
     rights: '© 2026 Wilderton Conseil. Tous droits réservés.',
     privacy: 'Politique de confidentialité',
     links: {
