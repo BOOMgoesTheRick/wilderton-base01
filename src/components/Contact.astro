@@ -84,10 +84,10 @@ const f = c.form;
 </section>
 
 <script define:vars={{ submitLabel: f.submit }}>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  const btn  = document.getElementById('contact-submit') as HTMLButtonElement | null;
-  const sent = document.getElementById('contact-sent') as HTMLElement | null;
-  const err  = document.getElementById('contact-error') as HTMLElement | null;
+  const form = document.getElementById('contact-form');
+  const btn  = document.getElementById('contact-submit');
+  const sent = document.getElementById('contact-sent');
+  const err  = document.getElementById('contact-error');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
