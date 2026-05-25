@@ -7,6 +7,7 @@ export const en: Translations = {
       'Strategic IT advisory for digital transformation, cybersecurity, Microsoft 365 architecture, and governance. 50+ projects delivered across industries.',
   },
   nav: {
+    brand: 'Advisory',
     services: 'Services',
     about: 'About',
     practice: 'Practice',

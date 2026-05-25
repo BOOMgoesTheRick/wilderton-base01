@@ -7,6 +7,7 @@ export const fr: Translations = {
       'Conseil stratégique en TI pour la transformation numérique, la cybersécurité, l\'architecture Microsoft 365 et la gouvernance. Plus de 50 projets livrés dans divers secteurs.',
   },
   nav: {
+    brand: 'Conseil',
     services: 'Services',
     about: 'À propos',
     practice: 'Pratique',

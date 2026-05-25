@@ -21,6 +21,7 @@ export interface Translations {
     description: string;
   };
   nav: {
+    brand: string;
     services: string;
     about: string;
     practice: string;
