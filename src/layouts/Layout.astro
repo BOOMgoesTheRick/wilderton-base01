@@ -78,6 +78,15 @@ const jsonLd = {
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT2RCPC0S"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQT2RCPC0S');
+    </script>
+
     <!-- Blocking theme init — must run before body renders to prevent FOUC -->
     <script is:inline>
       (function () {
