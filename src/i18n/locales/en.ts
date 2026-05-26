@@ -12,6 +12,7 @@ export const en: Translations = {
     about: 'About',
     practice: 'Practice',
     portfolio: 'Portfolio',
+    diagnostic: 'Diagnostic',
     contact: 'Contact',
     book: 'Book a Call',
     theme_light: 'LT',
@@ -21,9 +22,9 @@ export const en: Translations = {
   },
   hero: {
     eyebrow: 'Strategic IT Advisory',
-    headline: 'Technology Leadership for Organizations That Demand Excellence',
+    headline: 'Microsoft 365 security and Law 25 compliance — for Québec organizations.',
     subheadline:
-      'From digital transformation to cybersecurity architecture — we help executives align IT with strategy, reduce risk, and build systems built to last.',
+      'A senior advisor who speaks to executives as fluently as to systems. We identify your security risks and compliance gaps, then fix them — no jargon, no runaround.',
     cta_primary: 'Explore Services',
     cta_secondary: 'Schedule a Consultation',
     stat1_value: '50+',
@@ -238,6 +239,22 @@ export const en: Translations = {
         tags: ['Next.js', 'TypeScript', '9 Languages', '1,880+ Venues'],
       },
     ],
+  },
+  diagnostic: {
+    eyebrow: 'Start here',
+    headline: 'The Microsoft 365 Security & Law 25 Diagnostic',
+    subheadline: 'Fixed scope. Fixed price. Delivered in 4 to 6 weeks.',
+    body1: 'Most organizations don\'t know exactly where their security gaps are, or how exposed they are under Law 25 — until an incident, an auditor, or a client asks. The Diagnostic answers that question before someone else does.',
+    body2: 'Over a few weeks, we review your Microsoft 365 environment, your identity and access, your real recovery capability, and your Law 25 exposure. You get a clear, risk-ranked picture, written to be understood by your leadership and your IT team alike.',
+    list_heading: 'You walk away with:',
+    list_items: [
+      'A written report with findings ranked by risk level;',
+      'A prioritized 30/60/90-day remediation roadmap;',
+      'A one-page summary for your leadership;',
+      'A readout session to walk you through what matters, and why.',
+    ],
+    price: 'From $4,500 CAD. No obligation to continue. The diagnostic is yours, whether you do the remediation with us or not.',
+    button: 'Book a diagnostic',
   },
   contact: {
     eyebrow: 'Get in Touch',

@@ -12,6 +12,7 @@ export const fr: Translations = {
     about: 'À propos',
     practice: 'Pratique',
     portfolio: 'Portfolio',
+    diagnostic: 'Diagnostic',
     contact: 'Contact',
     book: 'Planifier un appel',
     theme_light: 'CL',
@@ -21,9 +22,9 @@ export const fr: Translations = {
   },
   hero: {
     eyebrow: 'Conseil Stratégique en TI',
-    headline: 'Leadership technologique pour les organisations qui exigent l\'excellence',
+    headline: 'Sécurité Microsoft 365 et conformité à la Loi 25 — pour les organisations québécoises.',
     subheadline:
-      'De la transformation numérique à l\'architecture de cybersécurité — nous aidons les dirigeants à aligner les TI avec la stratégie, réduire les risques et bâtir des systèmes durables.',
+      'Un conseiller senior qui parle autant aux dirigeants qu\'aux systèmes. Nous identifions vos risques de sécurité et vos lacunes de conformité, puis nous les corrigeons — sans jargon, sans détour.',
     cta_primary: 'Explorer les services',
     cta_secondary: 'Planifier une consultation',
     stat1_value: '50+',
@@ -238,6 +239,22 @@ export const fr: Translations = {
         tags: ['Next.js', 'TypeScript', '9 langues', '1 880+ établissements'],
       },
     ],
+  },
+  diagnostic: {
+    eyebrow: 'Commencez ici',
+    headline: 'Le Diagnostic Sécurité Microsoft 365 & Loi 25',
+    subheadline: 'Portée fixe. Prix fixe. Livré en 4 à 6 semaines.',
+    body1: 'La plupart des organisations ne savent pas exactement où se trouvent leurs failles de sécurité ni leur exposition à la Loi 25 — jusqu\'au jour où un incident, un auditeur ou un client pose la question. Le Diagnostic répond à cette question avant que quelqu\'un d\'autre ne la pose.',
+    body2: 'En quelques semaines, nous examinons votre environnement Microsoft 365, votre gestion des identités et des accès, votre capacité réelle de récupération, et votre exposition à la Loi 25. Vous recevez un portrait clair, hiérarchisé par risque, rédigé pour être compris autant par votre direction que par votre équipe TI.',
+    list_heading: 'Vous repartez avec :',
+    list_items: [
+      'Un rapport écrit présentant les constats classés par niveau de risque ;',
+      'Une feuille de route correctrice priorisée sur 30/60/90 jours ;',
+      'Un sommaire d\'une page pour votre direction ;',
+      'Une séance de restitution pour vous expliquer ce qui compte, et pourquoi.',
+    ],
+    price: 'À partir de 4 500 $ CAD. Sans engagement à poursuivre. Le diagnostic vous appartient, que vous fassiez la suite avec nous ou non.',
+    button: 'Réserver un diagnostic',
   },
   contact: {
     eyebrow: 'Contactez-nous',
