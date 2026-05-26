@@ -1,0 +1,222 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getTranslations } from '../../i18n/utils';
+
+const locale = 'en';
+const t = getTranslations(locale);
+---
+
+<Layout
+  title="Privacy Policy — Wilderton Advisory"
+  description="Privacy policy for Wilderton Advisory covering collection, use, and protection of personal information under Law 25 (Act respecting the protection of personal information in the private sector)."
+  lang={locale}
+>
+  <Header t={t} locale={locale} />
+  <main class="policy-main">
+    <div class="wrap policy-wrap">
+      <div class="policy-head">
+        <div class="sec-tag">Legal</div>
+        <h1 class="policy-title">Privacy Policy</h1>
+        <p class="policy-meta">Last updated: [DATE TO BE COMPLETED]</p>
+      </div>
+
+      <div class="policy-body">
+
+        <section>
+          <h2>Person responsible for personal information</h2>
+          <p>
+            The person responsible for the protection of personal information at Wilderton Advisory is:
+          </p>
+          <p>
+            <strong>[FULL NAME TO BE COMPLETED]</strong><br />
+            [TITLE TO BE COMPLETED]<br />
+            Email: <a href="mailto:[EMAIL TO BE COMPLETED]">[EMAIL TO BE COMPLETED]</a>
+            <em>(suggested address: privacy@wilderton-advisory.com)</em>
+          </p>
+        </section>
+
+        <section>
+          <h2>Information we collect</h2>
+          <p>We collect the following personal information:</p>
+          <ul>
+            <li><strong>Contact form:</strong> full name, email address, organization name, and the content of your message.</li>
+            <li><strong>Navigation data:</strong> IP address, browser type, pages visited, visit duration — via [ANALYTICS TOOL TO BE COMPLETED, e.g. Google Analytics, or remove this line if none].</li>
+          </ul>
+          <p>We do not collect sensitive information (health data, social insurance numbers, financial information, etc.).</p>
+        </section>
+
+        <section>
+          <h2>Why we use it</h2>
+          <p>The information collected is used for the following purposes:</p>
+          <ul>
+            <li>Responding to your enquiries and following up on engagements;</li>
+            <li>Contacting you within the scope of an advisory relationship;</li>
+            <li>Improving our website and understanding how visitors use it.</li>
+          </ul>
+          <p>We do not use your information for unsolicited marketing and do not sell it to third parties.</p>
+        </section>
+
+        <section>
+          <h2>Consent</h2>
+          <p>
+            By submitting the contact form on our website, you consent to the collection and use of your personal information for the purposes described in this policy. You may withdraw your consent at any time by writing to the email address indicated above.
+          </p>
+        </section>
+
+        <section>
+          <h2>Retention and destruction</h2>
+          <ul>
+            <li><strong>Contact form submissions:</strong> retained for a maximum of 30 days, then securely deleted.</li>
+            <li><strong>Engagement data (email, working documents):</strong> retained for [DURATION TO BE COMPLETED, e.g. 2 years] after the end of the engagement, then deleted or anonymized.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Security measures</h2>
+          <p>
+            Information transmitted through our contact form is encrypted in transit (TLS). Our systems are managed in accordance with the security practices we advise our clients to follow: multi-factor authentication, access controls, and secured Microsoft 365 environments.
+          </p>
+        </section>
+
+        <section>
+          <h2>Hosting and transfers outside Québec</h2>
+          <p>
+            Our website is hosted by [HOSTING PROVIDER TO BE COMPLETED, e.g. Vercel — United States]. Our communication services are provided by [EMAIL PROVIDER TO BE COMPLETED, e.g. Microsoft 365 — data in transit via Microsoft servers]. These providers may store data outside Québec and Canada. We take reasonable steps to ensure they maintain an adequate level of protection.
+          </p>
+        </section>
+
+        <section>
+          <h2>Your rights</h2>
+          <p>Under Law 25 (Act respecting the protection of personal information in the private sector), you have the right to:</p>
+          <ul>
+            <li>Access the personal information we hold about you;</li>
+            <li>Correct that information if it is inaccurate or incomplete;</li>
+            <li>Withdraw your consent to its use;</li>
+            <li>Request its deletion, subject to our legal retention obligations.</li>
+          </ul>
+          <p>
+            To exercise these rights, please write to us at: <a href="mailto:[EMAIL TO BE COMPLETED]">[EMAIL TO BE COMPLETED]</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Confidentiality incidents</h2>
+          <p>
+            In the event of a confidentiality incident (unauthorized access, disclosure, or loss of personal information), we will notify the affected individuals and the Commission d'accès à l'information du Québec within the timeframes required by law.
+          </p>
+        </section>
+
+        <section>
+          <h2>Changes</h2>
+          <p>
+            We may update this policy at any time. The most current version is always available at <a href="/en/privacy">/en/privacy</a>. The date of the last update is indicated at the top of this page.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer t={t} locale={locale} />
+</Layout>
+
+<style>
+  .policy-main {
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+
+  .policy-wrap {
+    padding: 80px 0 120px;
+  }
+
+  .policy-head {
+    border-bottom: 1px solid var(--hair-alpha);
+    padding-bottom: 48px;
+    margin-bottom: 64px;
+  }
+
+  .policy-title {
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 16px 0 12px;
+  }
+
+  .policy-meta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .policy-body {
+    max-width: 72ch;
+  }
+
+  .policy-body section {
+    margin-bottom: 52px;
+    border: none;
+    padding: 0;
+  }
+
+  .policy-body h2 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hair-alpha);
+  }
+
+  .policy-body p,
+  .policy-body li {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--body-text);
+    margin-bottom: 14px;
+  }
+
+  .policy-body ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .policy-body li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .policy-body li::before {
+    content: "—";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .policy-body a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .policy-body em {
+    color: var(--muted);
+    font-style: normal;
+    font-size: 12.5px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .policy-body strong {
+    color: var(--fg);
+  }
+</style>

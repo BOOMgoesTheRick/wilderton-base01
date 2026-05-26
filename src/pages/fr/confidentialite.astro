@@ -1,0 +1,222 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getTranslations } from '../../i18n/utils';
+
+const locale = 'fr';
+const t = getTranslations(locale);
+---
+
+<Layout
+  title="Politique de confidentialité — Wilderton Conseil"
+  description="Politique de confidentialité de Wilderton Conseil concernant la collecte, l'utilisation et la protection des renseignements personnels conformément à la Loi 25."
+  lang={locale}
+>
+  <Header t={t} locale={locale} />
+  <main class="policy-main">
+    <div class="wrap policy-wrap">
+      <div class="policy-head">
+        <div class="sec-tag">Légal</div>
+        <h1 class="policy-title">Politique de confidentialité</h1>
+        <p class="policy-meta">Dernière mise à jour : [DATE À COMPLÉTER]</p>
+      </div>
+
+      <div class="policy-body">
+
+        <section>
+          <h2>Responsable de la protection des renseignements personnels</h2>
+          <p>
+            La personne responsable de la protection des renseignements personnels au sein de Wilderton Conseil est :
+          </p>
+          <p>
+            <strong>[NOM COMPLET À COMPLÉTER]</strong><br />
+            [TITRE À COMPLÉTER]<br />
+            Courriel : <a href="mailto:[COURRIEL À COMPLÉTER]">[COURRIEL À COMPLÉTER]</a>
+            <em>(nous suggérons : confidentialite@wilderton-advisory.com)</em>
+          </p>
+        </section>
+
+        <section>
+          <h2>Renseignements que nous recueillons</h2>
+          <p>Nous recueillons les renseignements personnels suivants :</p>
+          <ul>
+            <li><strong>Formulaire de contact :</strong> nom complet, adresse courriel, nom de l'organisation, et le contenu de votre message.</li>
+            <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages consultées, durée de la visite — via [OUTIL D'ANALYSE À COMPLÉTER, ex. Google Analytics, ou supprimer si aucun].</li>
+          </ul>
+          <p>Nous ne recueillons pas de renseignements sensibles (données de santé, numéros d'assurance sociale, informations financières, etc.).</p>
+        </section>
+
+        <section>
+          <h2>Pourquoi nous les utilisons</h2>
+          <p>Les renseignements recueillis sont utilisés aux fins suivantes :</p>
+          <ul>
+            <li>Répondre à vos demandes de renseignements et assurer le suivi des mandats ;</li>
+            <li>Vous contacter dans le cadre d'une relation de services-conseils ;</li>
+            <li>Améliorer notre site Web et comprendre comment nos visiteurs l'utilisent.</li>
+          </ul>
+          <p>Nous n'utilisons pas vos renseignements à des fins de marketing non sollicité ni ne les vendons à des tiers.</p>
+        </section>
+
+        <section>
+          <h2>Consentement</h2>
+          <p>
+            En soumettant le formulaire de contact de notre site Web, vous consentez à la collecte et à l'utilisation de vos renseignements personnels aux fins décrites dans la présente politique. Vous pouvez retirer votre consentement en tout temps en nous écrivant à l'adresse courriel indiquée ci-dessus.
+          </p>
+        </section>
+
+        <section>
+          <h2>Conservation et destruction</h2>
+          <ul>
+            <li><strong>Soumissions du formulaire de contact :</strong> conservées 30 jours maximum, puis supprimées de manière sécurisée.</li>
+            <li><strong>Données relatives aux mandats (courriel, documents de travail) :</strong> conservées [DURÉE À COMPLÉTER, ex. 2 ans] après la fin du mandat, puis supprimées ou anonymisées.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Mesures de sécurité</h2>
+          <p>
+            Les renseignements transmis via notre formulaire de contact sont chiffrés en transit (TLS). Nos systèmes sont gérés conformément aux pratiques de sécurité que nous conseillons à nos clients : authentification multifacteur, contrôle des accès, et environnements Microsoft 365 sécurisés.
+          </p>
+        </section>
+
+        <section>
+          <h2>Hébergement et transferts hors Québec</h2>
+          <p>
+            Notre site Web est hébergé par [FOURNISSEUR D'HÉBERGEMENT À COMPLÉTER, ex. Vercel — États-Unis]. Nos services de communication sont fournis par [FOURNISSEUR COURRIEL À COMPLÉTER, ex. Microsoft 365 — données en transit via serveurs Microsoft]. Ces prestataires peuvent stocker des données à l'extérieur du Québec et du Canada. Nous prenons les mesures raisonnables pour nous assurer qu'ils maintiennent un niveau de protection adéquat.
+          </p>
+        </section>
+
+        <section>
+          <h2>Vos droits</h2>
+          <p>Conformément à la Loi 25 (Loi sur la protection des renseignements personnels dans le secteur privé), vous avez le droit :</p>
+          <ul>
+            <li>D'accéder aux renseignements personnels que nous détenons à votre sujet ;</li>
+            <li>De corriger ces renseignements s'ils sont inexacts ou incomplets ;</li>
+            <li>De retirer votre consentement à leur utilisation ;</li>
+            <li>De demander leur suppression, sous réserve de nos obligations légales de conservation.</li>
+          </ul>
+          <p>
+            Pour exercer ces droits, veuillez nous écrire à : <a href="mailto:[COURRIEL À COMPLÉTER]">[COURRIEL À COMPLÉTER]</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Incidents de confidentialité</h2>
+          <p>
+            En cas d'incident de confidentialité (accès non autorisé, divulgation ou perte de renseignements personnels), nous aviserons les personnes concernées et la Commission d'accès à l'information du Québec dans les délais prévus par la loi.
+          </p>
+        </section>
+
+        <section>
+          <h2>Modifications</h2>
+          <p>
+            Nous pouvons modifier la présente politique en tout temps. La version la plus récente est toujours accessible à l'adresse <a href="/fr/confidentialite">/fr/confidentialite</a>. La date de la dernière mise à jour est indiquée en haut de cette page.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer t={t} locale={locale} />
+</Layout>
+
+<style>
+  .policy-main {
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+
+  .policy-wrap {
+    padding: 80px 0 120px;
+  }
+
+  .policy-head {
+    border-bottom: 1px solid var(--hair-alpha);
+    padding-bottom: 48px;
+    margin-bottom: 64px;
+  }
+
+  .policy-title {
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 16px 0 12px;
+  }
+
+  .policy-meta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .policy-body {
+    max-width: 72ch;
+  }
+
+  .policy-body section {
+    margin-bottom: 52px;
+    border: none;
+    padding: 0;
+  }
+
+  .policy-body h2 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hair-alpha);
+  }
+
+  .policy-body p,
+  .policy-body li {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--body-text);
+    margin-bottom: 14px;
+  }
+
+  .policy-body ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .policy-body li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .policy-body li::before {
+    content: "—";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .policy-body a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .policy-body em {
+    color: var(--muted);
+    font-style: normal;
+    font-size: 12.5px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .policy-body strong {
+    color: var(--fg);
+  }
+</style>

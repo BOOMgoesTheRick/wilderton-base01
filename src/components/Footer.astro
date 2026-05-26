@@ -39,7 +39,7 @@ const f = t.footer;
     </div>
     <div>
       <h4>{f.legal_heading}</h4>
-      <a href="#">{f.privacy}</a>
+      <a href={locale === 'fr' ? '/fr/confidentialite' : '/en/privacy'}>{f.privacy}</a>
       <a href="mailto:info@wilderton-advisory.com">info@wilderton-advisory.com</a>
     </div>
   </div>
