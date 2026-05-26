@@ -7,6 +7,7 @@ import About from '../../components/About.astro';
 import WhyUs from '../../components/WhyUs.astro';
 import Questions from '../../components/Questions.astro';
 import Portfolio from '../../components/Portfolio.astro';
+import Diagnostic from '../../components/Diagnostic.astro';
 import Contact from '../../components/Contact.astro';
 import Footer from '../../components/Footer.astro';
 import { getTranslations } from '../../i18n/utils';
@@ -24,6 +25,7 @@ const t = getTranslations(locale);
     <WhyUs t={t} />
     <Questions t={t} />
     <Portfolio t={t} />
+    <Diagnostic t={t} />
     <Contact t={t} />
   </main>
   <Footer t={t} locale={locale} />

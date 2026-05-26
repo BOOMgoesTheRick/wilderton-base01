@@ -1,0 +1,188 @@
+---
+import type { Translations } from '../i18n/types';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const d = t.diagnostic;
+---
+
+<section class="sec diag-sec" id="diagnostic">
+  <div class="wrap">
+    <div class="diag-block reveal">
+      <div class="diag-eyebrow">
+        <span class="diag-dot" aria-hidden="true"></span>{d.eyebrow}
+      </div>
+
+      <div class="diag-layout">
+        <div class="diag-main">
+          <h2 class="diag-title">{d.headline}</h2>
+          <p class="diag-sub">{d.subheadline}</p>
+          <p class="diag-body">{d.body1}</p>
+          <p class="diag-body">{d.body2}</p>
+
+          <div class="diag-list">
+            <p class="diag-list-head">{d.list_heading}</p>
+            <ul>
+              {d.list_items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <div class="diag-aside">
+          <p class="diag-price">{d.price}</p>
+          <a href="#contact" class="btn diag-btn" id="diag-cta">
+            {d.button} <span class="arr">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ subjectValue: d.eyebrow }}>
+  document.getElementById('diag-cta')?.addEventListener('click', () => {
+    const subj = /** @type {HTMLInputElement|null} */ (document.getElementById('f-subject'));
+    if (subj) subj.value = subjectValue;
+  });
+</script>
+
+<style>
+  .diag-sec { background: var(--surface-2); }
+
+  .diag-block {
+    border: 1px solid var(--fg);
+    padding: 56px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diag-block::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .diag-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 36px;
+  }
+
+  .diag-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2.4s cubic-bezier(.2,.7,.2,1) infinite;
+  }
+
+  .diag-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .diag-title {
+    font-size: clamp(24px, 2.6vw, 36px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin: 0 0 12px;
+    max-width: 32ch;
+  }
+
+  .diag-sub {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 32px;
+  }
+
+  .diag-body {
+    color: var(--body-text);
+    font-size: 14px;
+    line-height: 1.85;
+    max-width: 66ch;
+    margin: 0 0 18px;
+  }
+
+  .diag-list {
+    margin-top: 28px;
+    border-left: 1px solid var(--accent);
+    padding-left: 24px;
+  }
+
+  .diag-list-head {
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .diag-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .diag-list li {
+    font-size: 13.5px;
+    color: var(--body-text);
+    line-height: 1.65;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .diag-list li::before {
+    content: "—";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .diag-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 68px;
+  }
+
+  .diag-price {
+    font-size: 13px;
+    color: var(--body-text-2);
+    line-height: 1.8;
+    margin: 0;
+    border: 1px solid var(--hair-alpha);
+    padding: 20px 22px;
+  }
+
+  .diag-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    padding: 14px 20px;
+  }
+
+  @media (max-width: 860px) {
+    .diag-block { padding: 36px 28px; }
+    .diag-layout { grid-template-columns: 1fr; gap: 40px; }
+    .diag-aside { padding-top: 0; }
+  }
+</style>

@@ -26,6 +26,7 @@ export interface Translations {
     about: string;
     practice: string;
     portfolio: string;
+    diagnostic: string;
     contact: string;
     book: string;
     theme_light: string;
@@ -90,6 +91,17 @@ export interface Translations {
       description: string;
       tags: string[];
     }[];
+  };
+  diagnostic: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    body1: string;
+    body2: string;
+    list_heading: string;
+    list_items: string[];
+    price: string;
+    button: string;
   };
   contact: {
     eyebrow: string;
